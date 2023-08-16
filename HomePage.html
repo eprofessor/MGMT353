@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+    <!-- PgP 2/5/2018  Need to update this page to a real RWD -->
+    <title>MGMT353 Home Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap for this course -->
+    <link href="../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="constants.js"></script>
+
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../ReadOnly/CourseConstants.js"></script>
+
+</head>
+
+
+<body class="container-fluid" onload="setVariables()">
+
+    <!-- PgP 6/15/2009 Scripted web page header -->
+    <div id="xHeading" class=" col-lg-12">
+        <script>document.getElementById("xHeading").innerHTML = pageHeading; </script>
+    </div>
+
+    <!-- 
+		PgP 2/28/2020 Add separate form to submit attendance		
+		PgP 3/1/2020 Attendance form and new .asp script work nicely, also modified CourseConstants.js 
+	-->
+
+    <div class="col-lg-12">
+        <hr />
+    </div>
+
+    <div class="col-lg-12">
+
+
+        <form class="container-fluid col-lg-4" action="https://eprofessor.azurewebsites.net/code/SubmitAttendance.asp" method="post" name="frmAttendance" id="frmAttendance">
+
+            <input class="form-control" name="FirstName" id="FirstName3" type="hidden" value="default first name">
+            <input class="form-control" name="LastName" id="LastName3" type="hidden" value="default last name">
+            <input class="form-control" name="pin3" id="pin3" type="hidden" value="default StarID">
+            <input class="form-control" name="email3" id="email3" type="hidden" value="default email address">
+            <input class="form-control" name="semester" id="semester3" type="hidden" value="default">
+            <input class="form-control" name="class" id="class3" value="xClass" type="hidden">
+            <input class="form-control" name="section" id="section3" value="default" type="hidden">
+            <input class="form-control" name="assignment" id="assignment3" value="Attendance" type="hidden">
+            <input name="InstID" id="InstID3" value="00617282" type="hidden">
+
+            <input class="text-danger btn-block btn-lg" type="submit" value="Submit Attendance" />
+
+            <hr />
+
+        </form>
+
+        <!-- PgP 2/28/2020 End of attendance form  -->
+
+
+        <form class="container-fluid col-lg-4" action="https://eprofessor.azurewebsites.net/code/grading/CourseAssignmentSubmissions.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+            <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+
+            <input class="form-control" name="FirstName" id="FirstName" type="hidden" value="default first name">
+            <input class="form-control" name="LastName" id="LastName" type="hidden" value="default last name">
+            <input class="form-control" name="pin" id="pin" type="hidden" value="default StarID">
+            <input class="form-control" name="email" id="email" type="hidden" value="default email address">
+            <input class="form-control" name="semester" id="semester" type="hidden" value="default">
+            <input class="form-control" name="class" id="class" value="xClass" type="hidden">
+            <input class="form-control" name="section" id="section" value="default" type="hidden">
+            <input class="form-control" name="assignment" id="assignment" value="Attendance" type="hidden">
+            <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+            <!-- -end-Student, class and assignment information-end -->
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Run Assignment Submissions Report" type="submit">
+            <hr />
+
+        </form>
+
+    </div>
+
+    <div class="text-center">
+        <!-- PgP 3/2/2020 below is  Java Script generated mail to link -->
+        <div id="emailStudent"></div>
+        <script>document.getElementById("emailStudent").innerHTML = xMailTo</script>
+        <hr />
+    </div>
+
+
+
+    <div class="col-lg-12 h3">
+        <a href="https://eprofessor.azurewebsites.net/MGMT353/default.asp" class="bg-info text-white" target="_blank">Syllabus</a>
+        <a href="https://winona.learn.minnstate.edu/d2l/home/6145740" class="bg-info text-white" target="_blank">D2L</a> &nbsp; &nbsp;
+    </div>
+
+
+    <p>
+        Note: Actual Due Dates in D2L Calendar<br />
+    </p>
+
+
+    <table class=" table table-striped table-hover table-sm table-bordered">
+        <tbody>
+            <tr class="text-center">
+                <th scope="col">Week</th>
+                <th scope="col">Due-Monday</th>
+                <th scope="col"><a href="CreateAssignmentPDFr2.png">Assignment 1</a></th>
+                <th scope="col"><a href="CreateAssignmentPDFr2.png">Assignment 2</a></th>
+                <th scope="col">Assignment 3</th>
+                <th scope="col">Assignment 4<br />
+                    no hyperlinks<br />
+                    D2L Assignment</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>08/28/23</td>
+                <td><a href="Formative00/Formative00.html">Formative00</a> <br />
+                    <a href="Summative01/Summative01.html">Summative01</a></td>
+                <td>&nbsp;</td>
+                <td>
+                    <a href="Project02/Project2TeamSubmission.html">Project2-Team</a></td>
+                <td>Project01-<a href="https://eprofessor.azurewebsites.net/Code/EntryFormWebsiteURL.asp" class="bg-info text-white" target="_blank">submit url </a></td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>9/4/23</td>
+                <td>Summative02</td>
+                <td>Project01-website</td>
+                <td>Project2-Problem</td>
+                <td><a href="https://eprofessor.azurewebsites.net/Project01/default.html" class="bg-info text-white" target="_blank">Project01</a>-no hyperlink<br />
+                    Project3-1</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>9/11/23</td>
+                <td>Summative03</td>
+                <td>BeingLate01</td>
+                <td>P4-IOT00-start/stop</td>
+                <td>Project3-2
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>9/18/23</td>
+                <td>Summative04
+					<br />
+                    Summative05</td>
+                <td>BeingLate02</td>
+                <td>P4-IOT01-setup</td>
+                <td>Project3-3</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>9/25/23</td>
+                <td>ValuePropositionDesign01</td>
+                <td>BeingLate03</td>
+                <td>Project2-Progress Report(D2L Assignment)<br />
+                    P4-IOT02-VNC</td>
+                <td>Project3-4</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>10/2/23</td>
+                <td>ValuePropositionDesign02</td>
+                <td>BeingLate04</td>
+                <td>Project2-Initial BMC(D2L Assignment)<br />
+                </td>
+                <td>Project3-5</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>10/9/23</td>
+                <td>ValuePropositionDesign03</td>
+                <td>The Four-Part 1</td>
+                <td>P4-IOT05-web server</td>
+                <td>Project3-6</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>10/16/23</td>
+                <td>ValuePropositionDesign04</td>
+                <td>The Four-Part 2</td>
+                <td>P4-IOT06-web sites</td>
+                <td>Project3-7 </td>
+            </tr>
+
+
+            <tr>
+                <td>9</td>
+                <td>10/23/23</td>
+                <td>Summative06</td>
+                <td>&nbsp;</td>
+                <td>Project2-DraftReport (D2L Assignment)<br />
+                </td>
+                <td>Project3-8 </td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>10/30/23</td>
+                <td>Summative07</td>
+                <td>21 Lessons01</td>
+                <td>P4-IOT11-Magic Mirror</td>
+                <td>Project3-9 </td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>11/6/23</td>
+                <td>Summative08</td>
+                <td>21 Lessons02</td>
+                <td>&nbsp;</td>
+                <td>Project3-10</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>11/13/23</td>
+                <td>Summative09</td>
+                <td>21 Lessons03</td>
+                <td>P4-IOT12-Node-RED</td>
+                <td>Project3-11</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>11/20/23</td>
+                <td>Summative10</td>
+                <td>21 Lessons04</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>11/27/23</td>
+                <td>Summative11</td>
+                <td>21 Lessons05</td>
+                <td>P4-IOT13-GrovePi+</td>
+                <td><a href="LinkedInCertificate2i.png" class="bg-info text-white" target="_blank">LinkedIn Learning Certificates</a></td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>12/4/23</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>Project2-FinalReport (D2L Assignment)</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+    <hr />
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+    <script>document.getElementById("xLicense").innerHTML = ccLicense; </script>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+    <script>document.getElementById("xfooter").innerHTML = Date(); </script>
+
+
+    <!-- PgP 6/15/2019 changed file location  jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../ReadOnly/jquery-1.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../ReadOnly/bootstrap.js"></script>
+
+</body>
+
+</html>

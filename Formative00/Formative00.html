@@ -1,0 +1,1939 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--
+		PgP 7/17/2020  Final version, with all updates for fall 2020
+		-->
+
+    <!-- With this version going to put the firstname, lastname... on the first page.
+		This will allow student to see assignment with blank fields.  Then when they get to Part 2 and do Exercise 1, put in
+		-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
+    <script src="../constants.js"></script>
+    <script src="../../ReadOnly/CourseConstants.js"></script>
+
+    <!-- need jquery for menu functionality-->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+
+    <!-- is the js needed?  Does not seem to be PgP 2020/04/26
+	<script src="../../ReadOnly/bootstrap.js"></script>
+	-->
+
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>Formative00</title>
+
+
+</head>
+
+
+
+<body onload="setVariables()">
+
+    <h1>only for ftf classes building websites</h1>
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+
+        <ul class="nav nav-pills text-uppercase lead">
+            <li class="active"><a data-toggle="pill" href="#Objectives">Learning Objectives</a></li>
+            <li><a data-toggle="pill" href="#Overview">Assignment Overview</a></li>
+            <li><a data-toggle="pill" href="#Part1">Part 1</a></li>
+            <li><a data-toggle="pill" href="#Part2">Part 2</a></li>
+            <li><a data-toggle="pill" href="#Part3">Part 3</a></li>
+        </ul>
+
+        <hr />
+
+
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly" />
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly" />
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="Formative00" type="text" readonly="readonly" />
+            </div>
+
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+        <!-- calculate the path based on the assignment -->
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+
+
+
+        <h1 class=" text-center">Basic Digital Technologies</h1>
+
+        <hr />
+
+        <div class="tab-content">
+
+
+            <div id="Objectives" class="col-lg-12 tab-pane fade in active">
+                <h2 class="text-center">Learning Objectives </h2>
+
+                <p>
+                    This assignment introduces 
+                    skills needed for this course, and begins development of <strong>a digital technology toolkit that will serve you well in your career. </strong>
+                </p>
+                <p>After completing this assignment you will be able to:</p>
+
+                <ol>
+                    <li>Create purposeful folder structures</li>
+                    <li>Create and annotate screenshots using the <a href="Images/SnippingTool.PNG" class="bg-info text-white" target="_blank">Snipping Tool</a>
+                        or <a class="bg-info text-white" href="https://learn.winona.edu/wiki/Snip_&_Sketch" target="_blank">Snip &amp; Sketch</a></li>
+
+                    <li>Perform hardware tests</li>
+                    <li>Connect to USB Type-C dock for using multiple external monitors, wired networking, battery charging</li>
+                    <li>Perform  <a href="https://learn.winona.edu/wiki/Installing_Software_From_The_Network" target="_blank" class="bg-info text-white">software installations</a> and learn to use Git version control</li>
+                    <li>Create PDF files from multiple screenshots</li>
+
+                    <li>Experience web conferencing-authenticate, configure and log into a Zoom web conference</li>
+                    <li>Configure the D2L course calendar to monitor assignment due dates and install an Outlook calendar feed</li>
+                    <li>Virtual Private Network-VPN-connect to the WSU network from off-campus using VPN technology</li>
+                    <li>Javascript coding-create a constants.js file to personalize your website</li>
+
+                    <li>Subscribe to curated business sources</li>
+                    <li>Combine PDF files </li>
+
+                    <li>Compose and send appropriate email communications</li>
+                    <li>Submit assignments, and check for confirming email</li>
+                    <li>Perform software updates</li>
+                </ol>
+                <hr />
+            </div>
+
+
+
+
+            <div id="Overview" class="col-lg-12 tab-pane fade">
+                <h2 class="text-center">Assignment Overview</h2>
+
+
+
+
+                <p>
+                    You are expected to have a working knowledge of the following practices and utilities.<br />
+                    If you do not understand how to use an item, perform a Google Search, consult <a href="https://openai.com/"   class="bg-info text-white" target="_blank" >Generative AI</a>, 
+                refer to the <a href="https://learn.winona.edu/wiki/WSU_Technology_Knowledge_Base" class="bg-info text-white" target="_blank">WSU Technology Knowledge Base</a>,&nbsp; ask a teaching assistant, or ask the instructor:
+                </p>
+                <ol>
+                    <li><a href="Images/restart.PNG" target="_blank" class="bg-info text-white"  >Restart laptop</a>
+                        <a href="Images/UpTime.PNG" class="bg-info text-white" target="_blank">on campus before class  </a>(Press Ctrl + Shift + Esc, select Performance tab)<br />
+                    </li>
+                    <li>Microsoft Windows 10 or 11-installed with latest updates</li>
+                    <li>Set primary email address to Winona State University
+					<ol>
+                        <li>Go to the <a href="https://starid.minnstate.edu/" class="bg-info text-white" target="_blank">StarID self-service site</a></li>
+                        <li>Select the 'Sign in to Profile' tab</li>
+                        <li>Login with your StarID and password</li>
+                        <li>Click the 'Office 365 Contact' tab</li>
+                        <li>Click the 'Select New Student Contact Card' button</li>
+                        <li>Select the corrrect version of your Winona State email address
+                            <ol>
+                                <li>CORRECT--&gt;firstname.lastname @go.winona.edu</li>
+                                <li>DO NOT SELECT--&gt; starID@go.winona.edu</li>
+                            </ol>
+                        </li>
+                    </ol>
+
+                    </li>
+                    <li>Install and configure the <a href="https://learn.winona.edu/wiki/Microsoft_Outlook" class="bg-info text-white" target="_blank">Outlook Desktop Client </a>on your laptop.</li>
+                    <li>Install and configure <a href="https://learn.winona.edu/wiki/Microsoft_OneDrive" class="bg-info text-white" target="_blank">One Drive for Business. </a>
+                        <br />
+                        Your username is: <code>StarID@go.minnstate.edu </code>
+                        <br />
+                        If you encounter problems, search online for, and install the latest version of &quot;<a href="Images/Office365RecoveryAssistant.PNG" class="bg-info text-white" target="_blank">Microsoft Support and Recovery Assistant for Office 365</a>&quot;<br />
+                        Again, login using your <a href="Images/Office365RecoveryAssistantSignIn.PNG" class="bg-info text-white" target="_blank">StarID@go.minnstate.edu</a>
+                        <br />
+                        See Tech Support in Somsen 207 if you still have problems. </li>
+                    <li>Log into your <a href="https://www.linkedin.com/learning" class="bg-info text-white" target="_blank">LinkedIn Learning account.</a>     <a href="https://learn.winona.edu/wiki/LinkedIn_Learning" class="bg-info text-white" target="_blank">(More info here)</a></li>
+                    <li><a href="https://www.linkedin.com/learning/windows-10-creators-update-essential-training-2017/browsing-through-folders" class="bg-info text-white" target="_blank">File Explorer</a>-to create and modify files and folders.</li>
+                    <li><a href="https://www.linkedin.com/learning/windows-10-creators-update-essential-training-2017/browsing-through-folders" class="bg-info text-white" target="_blank">Libraries</a>-to organize your work into virtual folders.</li>
+                    <li>Context sensitive shortcut menus are activated by <a href="https://www.linkedin.com/learning/computer-literacy-for-windows-10/understand-the-right-click" class="bg-info text-white" target="_blank">right-clicking</a> various objects in a window.</li>
+                    <li>Tool bars, menu bars, status bars can be turned on and off using context sensitive menus.</li>
+
+                    <li>Use of common <a href="https://www.linkedin.com/learning/windows-10-may-2019-update-essential-training/use-keyboard-shortcuts" class="bg-info text-white" target="_blank">
+                        <abbr title="Search LinkedIn Learning for 'Keyboard shortcuts for organizing and navigating' ">shortcuts </abbr>
+                    </a>, these will often work even when the menu options will not-
+              <ol>
+                  <li>Ctrl+A to select All</li>
+                  <li>Ctrl+C to Copy</li>
+                  <li>Ctrl+V to Paste</li>
+                  <li>Ctrl+Z to Undo</li>
+                  <li>Windows+L to lock screen</li>
+                  <li><a href="Images/WindowsKey.jpg" class="bg-info text-white" target="_blank">Windows Key</a></li>
+              </ol>
+                    </li>
+
+                    <li>Use of the help screen to learn terminology</li>
+                    <li>Appropriate browser/application pairings. Note these can and do change!
+              <ol>
+                  <li>Chrome-Google Drive, YouTube, D2L</li>
+                  <li>FireFox-good for privacy</li>
+                  <li>Edge-One Drive for Business, Office365</li>
+              </ol>
+                    </li>
+
+                    <li>Useful browser add-ins: Chris Pedrick's <a href="https://addons.mozilla.org/en-US/firefox/addon/web-developer/" target="_blank" class="bg-info text-white">Web Developer Toolbar</a> for FireFox</li>
+                    <li>Know basic HTML tags
+              <ol>
+                  <li>in FireFox menu select View&gt;Page Source</li>
+                  <li>refer to <a href="https://www.w3schools.com/tags/" target="_blank" class="bg-info text-white">W3Schools</a></li>
+              </ol>
+                    </li>
+                    <li>Validating HTML code-<a href="https://validator.w3.org/" target="_blank" class="bg-info text-white">refer to the W3C Markup Service</a></li>
+                    <li>Using browser to print web pages as .pdf file
+                    <ol>
+                        <li>Make sure url appears in the Header or Footer-<br />
+                            <a href="images/WebPageAsPdfShowingUrl_Firefox.PNG" target="_blank" class="bg-info text-white">see Firefox example</a>
+                            <br />
+                            <a href="images/WebPageAsPdfShowingUrl_Chrome.PNG" target="_blank" class="bg-info text-white">see Chrome example</a>
+                        </li>
+                    </ol>
+                    </li>
+                    <li>Troubleshooting advice-at first try finding a solution yourself
+              <ol>
+                  <li>Learn to Google any error message before asking anyone else</li>
+                  <li>Refer to <a href="https://www.linkedin.com/learning" class="bg-info text-white" target="_blank">LinkedIn Learning</a> </li>
+                  <li>Learn to use <a href="https://stackoverflow.com/" target="_blank" class="bg-info text-white">Stack Overflow</a></li>
+                  <li>Learn to use <a href="https://winona.learn.minnstate.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1722&amp;type=lti&amp;rcode=minnstate-25390810&amp;srcou=1722" target="_blank" class="bg-info text-white">Tutor.com</a>; see D2L for more info</li>
+              </ol>
+                    </li>
+                    <li>When seeking advice from teaching assistants or professor via email use proper etiquette
+						<ol>
+                            <li>subject line identifying course, section, assignment</li>
+                            <li>use accurate terminology</li>
+                            <li>use complete sentences and proofread</li>
+                            <li>provide screenshots of error messages-use the Snipping Tool</li>
+                        </ol>
+                    </li>
+                </ol>
+
+                <hr />
+            </div>
+
+
+
+
+
+
+            <div id="Part1" class="col-lg-12 tab-pane fade">
+
+
+                <div class="row col-lg-12">
+                    <div class="col-lg-4 h3 text-danger">175 points</div>
+                    <div class="col-lg-4 h2 text-center">Part 1</div>
+                    <div class="col-lg-1"></div>
+                </div>
+
+
+                <div class="row col-lg-12">
+                    <!--
+		note that this announcement is useless because students cannot view the announcement until after they have completed the steps.
+			But it will be handy to show them during the video recording of Formative00 Part 1
+		-->
+
+                    <hr />
+                    <hr />
+                    <p class="h3 text-danger">
+                        <strong>Before proceeding complete the steps in the D2L Announcement 'Core Website Files'.<br />
+                            This positions the files and folders needed to begin creating your course website.</strong>
+                    </p>
+                    <hr />
+                    <hr />
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Organizing and Protecting Your Work</a></div>
+
+                <div id="Exercise01" class="collapse in  col-lg-12">
+                    <p>
+                        <strong>Before proceeding you MUST have OneDrive for Business (OneDrive - MNSCU) installed and configured. </strong>
+                        <br />
+                        Install it per the resources in the Assignment Overview.<br />
+                    </p>
+
+                    <p>
+                        If you are not familiar with Windows File Explorer please review this LinkedIn Learning course, &#39; <a href="https://www.linkedin.com/learning/windows-10-organizing-files-and-folders/" target="_blank" class="bg-info text-white">Windows 10: Organizing Files and Folders</a> &#39;<br />
+                        Remember-no spaces in file or folder names-only use &#39;a-Z&#39;, &#39;0-9&#39; and the underscore character.<br />
+                    </p>
+
+                    <p>
+                        Windows File Explorer will organize the files and folders needed to complete coursework.
+                        <br />
+                        <a href="https://learn.winona.edu/wiki/Microsoft_OneDrive_for_Business" target="_blank" class="bg-info text-white">Using OneDrive for Business </a>provides an automated backup of these files-for this class and others.<br />
+                        In this class File Explorer is used-<br />
+                        1-To create folder structures that organize your work, such as screenshots to prove you have completed Exercises.<br />
+                        These items are stored on your laptop, and One Drive for Business automates the backup process to the cloud. 
+						<br />
+                        2-To create a local repository for your course website, which will be done in <a href="https://eprofessor.azurewebsites.net/Project01/default.html" target="_blank" class="bg-info text-white">Project01</a>.
+                        <br />
+
+                        These instructions reduce the chances of losing any class work.<br />
+                    </p>
+                    <p>
+                        Use Windows &#39;File Explorer&#39; to create a specific folder structure under OneDrive - MNSCU<br />
+                    </p>
+
+                    <ol>
+                        <li>Create a folder with this Class name</li>
+                        <li>Create a subfolder with this Assignment name.&nbsp; The path will be: '
+						<code><span id="zzPath"></span></code>
+                            <script>document.getElementById("zzPath").innerHTML = Path;</script>
+                            '
+							<br />
+                        </li>
+                    </ol>
+
+                    <br />
+
+                    <p>
+                        When done with the Exercise 1 and 2 screenshots, your folder will look similar to the image below, but with the appropriate class:
+                    </p>
+
+                    <p>
+
+                        <a href="Images/Ex1Sample.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/Ex1Sample.PNG', 'popup'); return false;">
+                            <img src="Images/Ex1Sample.PNG" width="300" alt="OneDrive structure" class="img-responsive img-responsive" /></a>
+                        Folder with screenshots for first two Exercises<br />
+                        <br />
+                        <strong>Note: clicking an image provides larger version in separate tab</strong>
+
+                    </p>
+
+
+                    <p>
+                        <strong>Use the Snipping Tool to make a screenshot of File Explorer, showing the Class folder containing the Formative00 subfolder just created.</strong>
+                    </p>
+
+
+
+                    <div class="text-primary">
+                        <p>
+                            <strong>(25) 1. Save the screenshot as &#39;Ex1A&#39; in the folder just created which has the path: </strong>
+                            <br />
+                            '
+						<code><span id="xzzPath"></span></code>
+                            <script>document.getElementById("xzzPath").innerHTML = Path;</script>
+                            '
+							<br />
+
+                            The screenshot file can be .jpg, .png or other appropriate image file format.<br />
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Screenshot Ex1A</h2>
+                    <hr />
+                </div>
+
+
+
+
+
+                <hr />
+
+                <p>
+                    Close the loop- login to OneDrive in the cloud to ensure that your files and folders are being synchronized with your laptop (and phone?).
+                </p>
+
+                <ol>
+                    <li>Open a browser to <a href="https://www.winona.edu/sky/" target="_blank" class="bg-info text-white">Office 365</a>
+                    </li>
+
+                    <li>Log into Office 365 and access your account.<br />
+                    </li>
+
+                    <li>Click the &#39;App Launcher&#39; button in the top left corner, then click on &#39;OneDrive&#39; .
+                    </li>
+
+                    <li>Check to make sure that the folder structure in OneDrive is exactly the same as the folder structure in your File Explorer OneDrive.<br />
+                        If not, time to start troubleshooting, you can have any number of problems.<br />
+
+                        <a href="Images/Office365OneDrive.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/Office365OneDrive.PNG', 'popup'); return false;">
+                            <img src="Images/Office365OneDrive.PNG" class="img-rounded img-responsive" alt="One Drive Cloud" width="300" /></a>
+                        <br />
+
+
+
+
+
+                    </li>
+
+                    <li>As a check, use NotePad and create a new file that contains the following text:<br />
+                        <code>I love OneDrive</code>
+                        <br />
+                        Save this file as &#39;ReadMe.txt&#39; to the OneDrive Formative00 folder on your laptop for this class
+                    </li>
+
+
+                </ol>
+
+                <br />
+                <hr />
+
+
+
+                <div class="col-lg-12 text-primary">
+                    <p>
+                        After creating 
+                            the ReadMe.txt file, open the browser to the OneDrive Formative00 folder for this class, and in a few minutes the file should appear.<br />
+                        If not it is time to begin trouble shooting.<br />
+                        <code><span id="bzdPath"></span></code>
+                        <script>document.getElementById("bzdPath").innerHTML = Path; </script>
+                        ' .<br />
+                        Use the Snipping Tool to make a screenshot of this file in OneDrive in your browser.<br />
+                        It will first look like this:<br />
+                        <a href="Images/OneDriveNewFile.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/OneDriveNewFile.PNG', 'popup'); return false;">
+                            <img src="Images/OneDriveNewFile.PNG" class="img-rounded img-responsive" alt="One Drive Cloud, New file" width="300" /></a>
+                        <br />
+
+                        Then it will rename the file like this:<br />
+
+                        <a href="Images/OneDriveNewFileRenamed.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/OneDriveNewFileRenamed.PNG', 'popup'); return false;">
+                            <img src="Images/OneDriveNewFileRenamed.PNG" class="img-rounded img-responsive" alt="One Drive Cloud, New file, renmaed" width="300" /></a>
+                        <br />
+
+
+
+
+
+
+                        <br />
+
+                        <strong>(25) 7. Save the screenshot  as &quot;Ex1B&quot; in your ' <code><span id="xddPath"></span></code>
+                            <script>document.getElementById("xddPath").innerHTML = Path; </script>
+                            ' folder.</strong>
+
+                    </p>
+
+                </div>
+
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Screenshot Ex1B</h2>
+                    <hr />
+                </div>
+
+
+                <hr />
+
+
+
+
+
+
+
+
+
+                <div class="col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Automate With Code</a></div>
+                <div id="Exercise02" class="collapse in  col-lg-12">
+
+                    <p>
+                        Examine the top of this page, and notice that the First Name field contains MyFirstName, the Last Name field contains MyLastName, the StarID field contains MyStarID, and the Email field contains MyStarID@go.minnstate.edu.<br />
+                        You will enter your first name, last name and StarID into a <code>constants.js</code> file to personalize your website and all other assignments for this class.
+						<br />
+                        This demonstrates the power of coding-to reduce errors, save time and add functionality.<br />
+                        Java Script and VB Script are used to automate and facilitate this course in the same manner as other software powering the web, ecommerce, everything.
+                    </p>
+
+                    <p>
+                        Note: if you are off-campus you will need to connect to the WSU VPN per the appropriate exercise, and then <a href="https://learn.winona.edu/wiki/Local_network_storage" target="_blank" class="bg-info text-white">map your network drives.</a><br />
+                    </p>
+
+                    <p>
+                        Once you are connected to the WSU network you can use File Explorer to navigate to different drives such as<br />
+                        C: which is the SSD-Solid State Drive in your laptop<br />
+                        R: which is your personal network storage space-but may soon be replaced by OneDrive for Business<br />
+                        T: which is a network drive that contains folders for any of your courses which have requested network storage (like this one)<br />
+                    </p>
+
+                    <ol>
+                        <li>Using File Explorer, navigate to the T: drive for this class, and find the folder with your <a href="https://eprofessor.azurewebsites.net/HelpFiles/NetworkUserName/NetworkUserName.html" target="_blank" class="bg-info text-white">WSU network username</a>.</li>
+                        <li>Inside this folder find the file named constants.js</li>
+                        <li>Right-click this file and &#39;Open With&#39; Notepad, carefully entering your first name, last name and StarID in the places indicated.<br />
+                            Be careful not to delete any punctuation marks.
+                        </li>
+                        <li>Save this file in the same location.</li>
+                        <li><a href="https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache" target="_blank" class="bg-info text-white">Refresh your browser</a> ( Ctrl + F5 ), and check to make sure <span><strong>your</strong></span> name appears correctly at the top of this assignment.</li>
+                        <li><strong>If your first name, last name or StarID is incorrect, make sure to fix it-the proper submission of all your work in this course depends on it</strong>.</li>
+                        <li>If you still see &#39;MyFirstName&#39; or &#39;default first name&#39; instead of your first name on this page, it is time to begin troubleshooting.</li>
+                        <li>Once you are satisfied that your name and StarID are correct in your constants.js file, you should browse to your website Home Page and submit your attendance.
+                        </li>
+                        <li>Check the confirmation message to make sure all information is correct.
+                            <br />
+                            Bring any error to the professor's or Teaching Assistant's attention.<br />
+                            <a href="Images/AttendanceConfirmationError.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/AttendanceConfirmationError.PNG', 'popup'); return false;">
+                                <img src="Images/AttendanceConfirmationError.PNG" class="img-fluid img-responsive img-rounded" alt="attendance email receipt" width="300" /></a>
+
+                        </li>
+                        <li>Check your email to verify that you also received a confirming email.<br />
+                            It will look something like this:
+                            <br />
+                            <a href="Images/AttendanceReceipt.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/AttendanceReceipt.PNG', 'popup'); return false;">
+                                <img src="Images/AttendanceReceipt.PNG" class="img-fluid img-responsive img-rounded" alt="attendance email receipt" width="300" /></a>
+                        </li>
+
+                    </ol>
+
+                    <div>
+                        <hr />
+                        <p>
+                            Use the Snipping Tool to make a screenshot of  File Explorer with the Preview Pane active, showing the constants.js file in the T: drive folder that you just updated using NotePad.<br />
+                            It will look like this:<br />
+                            <a href="Images/ConstantsJS.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ConstantsJS.PNG', 'popup'); return false;">
+                                <img src="Images/ConstantsJS.PNG" width="300" alt="personal constants file" class="img-responsive img-responsive" /></a><br />
+                            constants.js File<br />
+                            <br />
+                        </p>
+                        <p class="text-primary">
+                            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                            <strong>(50)  2. Save the screenshot  as &quot;Ex2&quot; in your ' </strong><code><span id="aPath"></span></code>
+                            <strong>
+                                <script>document.getElementById("aPath").innerHTML = Path; </script>
+                                ' folder.&nbsp; See the next Exercise for those instructions.</strong>
+                        </p>
+
+                        <p>
+                            It can be a .jpg, .png or other appropriate image file format.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Screenshot Ex2</h2>
+                    <hr />
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-USB-C Docks</a></div>
+
+                <div id="Exercise03" class="collapse in  col-lg-12">
+                    <p>
+                        Ultrabooks are being built with fewer, but increasingly functional ports.<br />
+                        The WSU lease models are equipped with Thunderbolt (USB Type-C) ports that can provide connections to 2 external monitors, a wired network, and power-among other things.<br />
+                        As a result, you can plug your laptop into a USB Type-C dock with one cable and begin to work.
+                    </p>
+                    <p>
+                        Note: after plugging your laptop into the USB Type-C dock, make sure that the &#39;Wired&#39; connection icon is visible in the lower right  &#39;Task Tray&#39;.<br />
+                        <img src="Images/WiredNetwork.png" class="img-fluid img-responsive img-rounded" alt="Wired Network" />
+                        Wired Network Connection<br />
+                        If the wired network icon does not appear when connected to a Somsen 301 USB Type-C dock, contact a TA or the professor for assistance-there is something wrong with your laptop, it may need a driver update, or more.
+                    </p>
+                    <p>
+                        Why are additional monitors necessary?  Some reasons:
+                    </p>
+                    <ul>
+                        <li>Conveniently run multiple software applications on separate monitors</li>
+                        <li>Easily copy and paste data between open applications</li>
+                        <li>Participate in a web conference while also running other applications</li>
+                        <li>Watch  class recordings while also running other applications</li>
+                        <li>Be able to keep Outlook open in one monitor at all times</li>
+                    </ul>
+                    <p>To setup, use and disconnect an external monitor from your laptop follow the instructions below.</p>
+
+                    <div>
+                        <a href="Images/ssThreeMonitors.jpg" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssThreeMonitors.jpg', 'popup'); return false;">
+                            <img src="Images/ssThreeMonitors.jpg" class="img-fluid img-responsive img-rounded" alt="Multiple monitors" width="300" /></a>
+                        Three monitors, outlined in red, orange and blue.<br />
+                    </div>
+                    <br />
+
+                    <p>When using external monitors you can have a &#39;public&#39; and &#39;private&#39; display. The primary laptop display can be private, viewable only by the user.  The external  monitors can be public, viewed by others.  This allows the user to view class notes, email, Desire2Learn information privately on their laptop.  The user can publicly share a website or spreadsheet. </p>
+                    <ol>
+                        <li>Connect the USB-Type C cable to the appropriate port, depending on your laptop model. See the teacher or TA if you need assistance.</li>
+                        <li>Right click a blank area of your desktop and choose &#39;Display settings&#39;, the Settings dialog box will appear.</li>
+                        <li>Refer to the figure below and adjust the settings to position and orient your monitors correctly. You may need to click the &#39;Apply&#39; button several times during this process.
+                    <br />
+                            Note that:
+              <ol>
+                  <li>If three monitors do not appear, click the &#39;Detect&#39; button.</li>
+                  <li>Under &#39;Multiple displays&#39; all three should be set to &#39;Extend desktop to this display&#39;</li>
+                  <li>Click the &#39;Identify&#39; button to find the number of each monitor.</li>
+                  <li>&quot;Monitor 1&quot; will be your laptop display</li>
+                  <li>Make sure when Monitor 1 is selected (monitor icon highlighted in blue) that &#39;Make this my main display&#39; box is checked.</li>
+                  <li>&quot;Monitor 2&quot; will be your external landscape display, and should be positioned above your laptop.</li>
+                  <li>&quot;Monitor 3&quot; will be your external portrait display, and should be positioned to the left of your laptop</li>
+              </ol>
+                        </li>
+                        <li>In the graphic, select your portrait monitor, number 3.</li>
+                        <li>Under &#39;Orientation&#39; select &#39;Portrait&#39;.</li>
+                        <li>Click 'Apply' in the lower right.</li>
+                    </ol>
+
+                    <div>
+                        <br />
+
+                        <a class="img-responsive img-rounded" href="Images/Monitors.PNG" onclick="window.open('Images/Monitors.PNG', 'popup'); return false;" target="popup">
+                            <img src="Images/Monitors.PNG" alt="display setting controls" width="300" /></a><br />
+                        Display Setting Controls<br />
+                        <br />
+
+                    </div>
+
+                    <ol>
+                        <li value="7">As necessary drag the monitors into the correct physical location as depicted in the 'Select and Arrange Displays' section at the top of the Settings dialog box. Then click &#39;Apply&#39; to accept the changes. You may need to repeat this procedure.</li>
+                        <li>To test that you have configured your monitors correctly you should be able to move the Settings dialog box between all three monitors seamlessly by clicking and dragging on the dialog box title bar. Repeat the above steps as necessary until you can do this.</li>
+                        <li>Close the dialog box.</li>
+                    </ol>
+
+                    <p>
+                        Display content on all three monitors, such as websites.
+                    </p>
+
+
+                    <div class="text-primary">
+                        <p>
+                            <strong>(25) 3.	Use the Snipping Tool in &#39;Full-screen Snip&#39; Mode to make a screenshot of all three monitors.
+                            </strong>
+                        </p>
+                        <p>
+                            Save the screenshot  as &quot;Ex3&quot; in your ' <code><span id="cPath"></span></code>
+                            <script>document.getElementById("cPath").innerHTML = Path; </script>
+                            ' folder.<br />
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Screenshot Ex3</h2>
+                    <hr />
+                </div>
+
+
+
+
+                <div class="col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Software Installation-PDFill</a></div>
+                <div id="Exercise04" class="collapse in  col-lg-12">
+                    <p>
+                        PDFill combines .pdf files that you will be creating during this course into one file.<br />
+                        Download a copy of PDFill.exe from Professor Paulson&#39;s <a href="https://mnscu-my.sharepoint.com/:f:/g/personal/wp8798rh_minnstate_edu/Ellwjc3DXPdBlFO2tO9Wp-gBHfqOYdgSjDwVxdjZnsoVnQ?e=9IixBd" class="bg-info text-white" target="_blank">OneDrive - MNSCU &#39;ReadOnly&#39; folder.</a><br />
+                        Double-click PDFill.exe to begin the installation process.
+                    </p>
+
+                    <ol>
+
+
+
+                        <li>Install PDFill, but select only &quot;FREE PDFill PDF Tools (No Watermark)&quot; option
+                    <br />
+
+                            <a href="Images/ssPDFill.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssPDFill.JPG', 'popup'); return false;">
+                                <img alt="PDFill" class="img-rounded img-responsive" src="Images/ssPDFill.JPG" width="300" /></a>
+                            <br />
+
+                        </li>
+
+
+                    </ol>
+
+
+                    <hr />
+
+                    <div class="col-lg-12">
+                        <p>
+                            After installing PDFill open the Control Panel.
+							<br />
+                            In the upper right corner click the drop-down arrow and select 'Small Icons'.<br />
+
+                            Make sure you are at 'Control Panel&gt;All Control Panel Items&gt;Programs and Features'<br />
+                            Make the window big enough to view all the icons.<br />
+                        </p>
+                    </div>
+
+
+                    <div class="col-lg-12 text-primary">
+                        <p>
+                            <strong>(25)  4. With the Snipping Tool make a screenshot of the Control Panel window showing the PDFill icon.<br />
+                                Use the </strong><span class="bg-info text-white"><strong>Yellow Highlighter Tool</strong></span><strong> to&nbsp; highlight the &#39;PDFill&#39; software icon.
+                                </strong>
+                        </p>
+                        <p>
+                            Save the screenshot  as &quot;Ex4&quot; in your ' <code><span id="ddPath"></span></code>
+                            <script>document.getElementById("ddPath").innerHTML = Path; </script>
+                            ' folder.<br />
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Screenshot Ex4</h2>
+                    <hr />
+                </div>
+
+
+
+
+
+
+
+
+                <div id="PDFfileCreation1">&nbsp;</div>
+
+                <div class="col-lg-12"><a href="#ExercisePDF1" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+                <div id="ExercisePDF1" class="collapse in  col-lg-12">
+                    <p>
+                        You will create one .pdf (portable document format) file from the screenshots taken above.<br />
+                        Two methods of combining screenshots are presented below.<br />
+                        Choose whichever method works for you.<br />
+                        You can switch between methods at any time.
+                    </p>
+
+                    <hr />
+                    <hr />
+
+                    <p>
+                        Make sure you have Windows 10 installed, and you have the option &#39;Microsoft Print to PDF&#39; in the Print Dialog Box.<br />
+                        If not, contact a TA or the professor.<br />
+                        <a href="Images/ssPrintToPDF.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssPrintToPDF.JPG', 'popup'); return false;">
+                            <img alt="print to pdf" class="img-rounded img-responsive" src="Images/ssPrintToPDF.JPG" title="print dialog box" width="300" /></a>
+                        <span>Print dialog box</span>
+                        <br />
+                    </p>
+
+
+
+
+
+                    <h2>PDF Screenshot Method  1</h2>
+
+                    <p>About August 2022 'Print Pictures with Microsoft Print to PDF' (Method 2, below) became unstable so this is the preferred method.<br />
+                                               
+                    </p>
+
+                    <ol>
+                        <li>Open a blank Word Document</li>
+                        <li>Open 'File Explorer' and navigate to the folder containing your screenshots:<br />
+                              <code><span id="qxqPath"></span></code>
+                            <script>document.getElementById("qxqPath").innerHTML = Path; </script>
+                            <br />
+                        </li>
+                        <li>Select all the screenshot files and drag them into the Word Document</li>
+                        <li>In Word, select File>Print, then select 'Microsoft Print to PDF'</li>
+                        <li>Save the file as 'Formative00_Part1.pdf' to the folder: <br />
+                             <code><span id="qyqxPath"></span></code>
+                            <script>document.getElementById("qyqxPath").innerHTML = Path; </script>
+                            <br />
+
+                        </li>
+                    </ol>
+
+                            <a href="Images/PdfWord.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/PdfWord.PNG', 'popup'); return false;">
+                                <img alt="Print to PDF" class="img-rounded img-responsive" src="Images/PdfWord.PNG" width="300" /></a>
+                            <br />
+
+                    <hr />
+                    <hr />
+
+
+
+
+
+                    <h2>PDF Screenshot Method  2</h2>
+
+                    <ol>
+                        <li>Open File Explorer, navigate to your ' <code><span id="oPath"></span></code>
+                            <script>document.getElementById("oPath").innerHTML = Path; </script>
+                            ' folder.<br />
+                            Make sure the screenshot files are properly named.</li>
+                        <li>Select all of the screenshots. </li>
+                        <li>Right Click and select &#39;Print&#39; from the pop-up menu.</li>
+                        <li>In the bottom center of the &#39;Print Pictures&#39; dialog box <strong>uncheck</strong> the box &quot;Fit picture to frame&quot;</li>
+                        <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;Formative00_Part1.pdf&quot; in your ' <code><span id="qqPath"></span></code>
+                            <script>document.getElementById("qqPath").innerHTML = Path; </script>
+                            ' folder.<br />
+                            <a href="Images/PrintToPdf.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/PrintToPdf.PNG', 'popup'); return false;">
+                                <img alt="Print to PDF" class="img-rounded img-responsive" src="Images/PrintToPdf.PNG" width="300" /></a>
+                            <br />
+                        </li>
+                        <li>You have created a PDF file that contains all 4 screenshots. It is viewable in your Chrome browser, or using Adbobe Acrobat Reader.<br />
+                            Do not worry about the order of the screenshots, nor the rotation.</li>
+
+                    </ol>
+
+
+
+
+
+
+
+
+                    <div class="col-lg-12 text-primary">
+                        <p><strong>(25) 5. Upload your 'Formative00_Part1.pdf' file to the D2L 'Formative00_Part1' Assignment folder.</strong>
+                            <br />
+                            ...<br />
+                        </p>
+
+                    </div>
+                    <hr />
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="Part2" class="col-lg-12 tab-pane fade">
+
+
+
+                <!-- Calculate the correct Path for saving the files -->
+                <!--	<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>  -->
+
+
+
+                <div class="row col-lg-12">
+                    <div class="col-lg-4 h3 text-danger">175 points</div>
+                    <div class="col-lg-4 h2 text-center">Part 2</div>
+                    <div class="col-lg-1"></div>
+                </div>
+
+
+                <hr />
+
+
+                <div class="col-lg-12"><a href="#Exercise99" class="btn btn-info" data-toggle="collapse">Exercise 5-Software Installation-Visual Studio, GitHub</a>  </div>
+
+                <div id="Exercise99" class="collapse in  col-lg-12">
+                    <p>
+                        Download and install Visual Studio Enterprise 2022 to create and maintain a website, which is how you will complete course assignments.<br />
+                        Create a GitHub account which is used to obtain assignments and learn about version control.<br />
+                        Version control allows many programmers to collaborate on software development without needing to be co-located.  It also allows a disciplined methodology to control this software.
+                    </p>
+
+                    <ol>
+                        <li>Get Visual Studio Enterprise, 64-bit, 2022 or later, from-<a class="bg-info text-white" href="https://aka.ms/devtoolsforteaching" target="_blank">Azure Dev Tools</a><br />
+                            Username is: <code>StarID@go.minnstate.edu</code>
+                        </li>
+
+                        <li>As Visual Studio downloads, retrieve and save your Product Key from the Azure Dev Tools website.</li>
+
+                        <li>Use NotePad and create a file named 'ProductKey.txt'</li>
+
+                        <li>Paste your Visual Studio Product Key into this file</li>
+
+                    </ol>
+
+                    <p class="text-primary">
+                        <strong>(25) 6.  Save this file as "ProductKey.txt" in your ' 
+							<code><span id="azdPath"></span></code>
+                            <script>document.getElementById("azdPath").innerHTML = Path; </script>
+                            ' folder.<br />
+                        </strong>
+
+
+                    </p>
+
+
+                    <hr />
+
+                    <p>Install Visual Studio</p>
+
+                    <ol>
+
+                        <li>Please install the ASP.NET and web development, and the Python development modules.<br />
+                            If you forget to install these modules, you can choose Tools&gt;Get Tools and Features...<br />
+                            The software is available at no charge to you.<br />
+                            The installation requires about 8GB of disk space.<br />
+
+                            <a href="Images/VS2022_Install.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/VS2022_Install.PNG', 'popup'); return false;">
+                                <img alt="VS Install" class="img-rounded img-responsive" src="Images/VS2022_Install.PNG" width="300" /></a>
+                            <br />
+                        </li>
+
+                        <li>If you are using VS 2022 or later you can skip this step, as the extension is already installed.<br />
+                            If you are still using VS2019 or earlier, you must install the Visual Studio GitHub Extension<br />
+                            From the menu select Extensions&gt;Manage Extensions and search for &#39;GitHub Extension&#39;.
+                            <br />
+
+                            <a href="Images/ssGitHubExt.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssGitHubExt.PNG', 'popup'); return false;">
+                                <img src="Images/ssGitHubExt.PNG" class="img-rounded img-responsive" alt="Git Hub Extenstion" width="300" /><br />
+                            </a>
+                        </li>
+
+                        <li>Visual Studio Settings
+                            <br />
+
+                            Open Visual Studio. 
+                            <br />
+                            Under Tools&gt;Options change the following settings are optimized for this class.<br />
+                            &gt;Text Editor&gt;All Languages; check 'Line numbers'<br />
+
+                            <a href="Images/ToolsOptionsLineNumbers.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ToolsOptionsLineNumbers.PNG', 'popup'); return false;">
+                                <img src="Images/ToolsOptionsLineNumbers.PNG" class="img-fluid img-responsive img-rounded" alt="VS line numbers" width="300" /></a>
+                            Check 'Line numbers'<br />
+                            <br />
+
+                            Under &gt;Web Forms Designer; check 'Legagcy Web Forms designer' and Start Pages in "Design View"
+                            <br />
+                            <a href="Images/ToolsOptionsLegacyWebForms.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ToolsOptionsLegacyWebForms.PNG', 'popup'); return false;">
+                                <img src="Images/ToolsOptionsLegacyWebForms.PNG" class="img-fluid img-responsive img-rounded" alt="VS web form designer" width="300" /></a>
+                            Enable 'Legacy Web Forms designer'<br />
+
+                            <br />
+                        </li>
+
+                        <li>Update Visual Studio as required.<br />
+                            Periodically updates are made available for Visual Studio.<br />
+                            You are notified by a red bell icon in the lower-right.<br />
+                            <a href="Images/UpdateAvailableIcon.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/UpdateAvailableIcon.PNG', 'popup'); return false;">
+                                <img src="Images/UpdateAvailableIcon.PNG" class="img-fluid img-responsive img-rounded" alt="Update Available" width="300" /></a>
+                            Install updates outside of class, as they can take time.<br />
+                            Note that you do not have to sign into your Minnstate account to use Visual Studio.<br />
+
+                        </li>
+
+
+                        <li>Use the Snipping Tool to make a screenshot of the ProductKey and save the screen shot:<br />
+                            <a href="Images/Ex5ProductKey.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/Ex5ProductKey.PNG', 'popup'); return false;">
+                                <img alt="Product Key" class="img-rounded img-responsive" src="Images/Ex5ProductKey.PNG" width="300" /></a>
+
+                        </li>
+
+
+                    </ol>
+
+
+                    <p class="text-primary">
+                        <strong>(25) 6.
+						Save this screenshot  as &quot;Ex5A&quot; in your ' <code><span id="adPath"></span></code>
+                            <script>document.getElementById("adPath").innerHTML = Path; </script>
+                            ' folder.<br />
+                        </strong>
+
+
+                    </p>
+
+                    <div class="col-lg-12 text-danger">
+                        <h2>Screenshot Ex5A</h2>
+                        <hr />
+                    </div>
+
+
+                    <hr />
+
+                    <hr />
+
+                    <p>
+                        Create a GitHub account so that you will be able to obtain course assignments in the coming weeks.
+                    </p>
+
+                    <ol>
+                        <li>Open a browser to <a href="https://github.com/" target="_blank" class="bg-info text-white">GitHub</a>
+                        </li>
+
+                        <li>Log into GitHub and create an account, if you do not already have one.<br />
+                        </li>
+
+
+                    </ol>
+
+                    <br />
+                    <hr />
+
+
+                    <hr />
+
+                    <div class="col-lg-12 text-primary">
+                        <p>
+                            After creating your GitHub accoumt use File Explorer to navigate to the folder
+							<code><span id="bdPath"></span></code>
+                            <script>document.getElementById("bdPath").innerHTML = Path; </script>
+                            ' .<br />
+                            Use the Snipping Tool to make a screenshot of your GitHub home page.<br />
+                            It will look like this:
+					<a href="Images/Github.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/Github.PNG', 'popup'); return false;">
+                        <img src="Images/Github.PNG" class="img-rounded img-responsive" alt="Github" width="300" /></a>
+
+
+
+                            .<br />
+
+                            <strong>(25) 7. Save the screenshot  as &quot;Ex5B&quot; in your ' <code><span id="dPath"></span></code>
+                                <script>document.getElementById("dPath").innerHTML = Path; </script>
+                                ' folder.</strong>
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-lg-12 text-danger">
+                        <h2>Screenshot Ex5B</h2>
+                        <hr />
+                    </div>
+
+
+                    <hr />
+
+                    <hr />
+
+
+
+
+                    <br />
+                    <hr />
+
+
+                    <hr />
+
+                    <div class="col-lg-12 text-primary">
+
+
+                        <p>
+                            Download and install Git for Windows, so that Visual Studio can use git commands.<br />
+
+                            <img src="Images/gfw.png" class="img-fluid img-responsive img-rounded" alt="Git For Windows icon" />
+
+                        </p>
+
+                        <ol>
+                            <li>Open a browser to <a href="https://git-scm.com/download/win" target="_blank" class="bg-info text-white">Git for Windows</a>
+                            </li>
+
+                            <li>Download the latest 64-bit version for Windows.<br />
+
+                                <a href="Images/gfwDownload.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/gfwDownload.PNG', 'popup'); return false;">
+                                    <img src="Images/gfwDownload.PNG" class="img-rounded img-responsive" alt="Git for Windows Download" width="300" /></a>
+
+
+
+                            </li>
+
+                        </ol>
+
+                        <p>
+                        </p>
+
+                        <p>
+                            After installing  Git for Windows, open the Control Panel to Programs and Features.<br />
+                            Use File Explorer to navigate to the folder
+							<code><span id="bxdPath"></span></code>
+                            <script>document.getElementById("bxdPath").innerHTML = Path; </script>
+                            ' .<br />
+                            Use the Snipping Tool to make a screenshot showing that Git for Windows is installed.<br />
+
+                            <br />
+
+                            <strong>(25) 8. Save the screenshot  as &quot;Ex5C&quot; in your ' <code><span id="xdPath"></span></code>
+                                <script>document.getElementById("xdPath").innerHTML = Path; </script>
+                                ' folder.</strong>
+
+                        </p>
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Screenshot Ex5C</h2>
+                    <hr />
+                </div>
+
+
+
+
+
+
+
+                <div class="col-lg-12"><a href="#Exercise98" class="btn btn-info" data-toggle="collapse">Exercise 6-Zoom Web Conferencing</a></div>
+
+                <div id="Exercise98" class="collapse in  col-lg-12">
+                    <br />
+                    <ol>
+                        <li>Browse to <a href="https://minnstate.zoom.us/download" target="_blank" class="bg-info text-white">https://minnstate.zoom.us/</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Click the &#39;Download Client&#39; link at the bottom of the page to install the latest Zoom Client for meetings.<br />
+                            <a href="Images/ZoomSSO.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ZoomSSO.PNG', 'popup'); return false;">
+                                <img src="Images/ZoomSSO.PNG" alt="Zoom Signin" class="img-responsive" width="300" /></a>
+                        </li>
+
+
+                        <li>Click the &#39;Sign in&#39; button, your username is&nbsp; <code>StarID@go.minnstate.edu</code> ; password is your WSU network password
+                            <br />
+                            Note: This sign in process authenticates you to the Minnstate Zoom system so that you do not show up as a &#39;Guest&#39; in meetings.<br />
+                            <strong>By authenticating you ensure you will get credit for Attendance when the Professor runs the Zoom Attendance report.</strong>
+                        </li>
+
+                        <li>From the D2L &#39;Course Info&#39; widget click on the url for the web conference.<br />
+                            eProfessor Zoom Room-<a href="https://minnstate.zoom.us/my/eprofessor" target="_blank" class="bg-info text-white">https://minnstate.zoom.us/my/eprofessor</a><br />
+                            Note: if doing this assignment outside of class time, log into your personal Zoom room.<br />
+                        </li>
+
+                        <li>Under Settings&gt;General, check &#39;Always show meeting controls&#39;<br />
+                            The meeting control toolbar will appear at the bottom of your Zoom meeting window-see screenshot in next step.
+					<a href="Images/MeetingControls.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/MeetingControls.PNG', 'popup'); return false;">
+                        <img src="Images/MeetingControls.PNG" alt="Zoom Meeting Controls" class="img-responsive" width="300" /></a>
+                            <br />
+                        </li>
+
+                        <li>On the meeting controls, open the Participants and Chat windows
+					<a href="Images/ZoomSetup.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ZoomSetup.JPG', 'popup'); return false;">
+                        <img src="Images/ZoomSetup.JPG" alt="Zoom Setup" class="img-responsive" width="300" /></a>
+                            <br />
+                        </li>
+
+
+                    </ol>
+
+
+
+                    <p>
+                        In your Zoom account, click the 
+                    &#39;Profile&#39; on the left side and view your profile.<br />
+                        Make the window big enough to view at least the information shown below.<br />
+                    </p>
+
+                    <p>
+                        <a href="Images/ZoomProfile.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ZoomProfile.PNG', 'popup'); return false;">
+                            <img src="Images/ZoomProfile.PNG" alt="Zoom Profile" class="img-responsive" width="300" /></a><br />
+
+                    </p>
+
+                    <p class="text-primary">
+                        <strong>(25) 9. Use the Snipping Tool to make a screenshot of your profile.</strong><br />
+                    </p>
+                    <p>
+                        Save the screenshot  as &quot;Ex6&quot; in your ' <code><span id="ePath"></span></code>
+                        <script>document.getElementById("ePath").innerHTML = Path; </script>
+                        ' folder.<br />
+                    </p>
+
+                </div>
+
+
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Screenshot Ex6</h2>
+                    <hr />
+                </div>
+
+
+
+
+                <div class="col-lg-12"><a href="#Exercise97" class="btn btn-info" data-toggle="collapse">Exercise 7-D2L Due Dates in Outlook</a></div>
+
+                <div id="Exercise97" class="collapse in  col-lg-12">
+                    <p>
+                        All course assignments are listed in the D2L calendar.<br />
+                        You view assignment due dates in your Outlook desktop client by subscribing to the .ics calendar feed provided by D2L.<br />
+                    </p>
+
+                    <ol>
+                        <li>Log into D2L and find this course.
+                            <br />
+                            Click on 'Calendar' or 'Materials&gt;Calendar' from the menu.<br />
+
+                            <a href="Images/F00_D2L_Calendar_Select.png" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/F00_D2L_Calendar_Select.png', 'popup'); return false;">
+                                <img src="Images/F00_D2L_Calendar_Select.png" alt="click calendar" class="img-responsive" width="300" /></a><br />
+                        </li>
+
+                        <li>Click on the 'Settings' icon. (also note the Subscribe icons, you will use this later) 
+                <br />
+
+                            <a href="Images/F00_D2L_Calendar_Settings.png" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/F00_D2L_Calendar_Settings.png', 'popup'); return false;">
+                                <img src="Images/F00_D2L_Calendar_Settings.png" alt="click settings" class="img-responsive" width="300" /></a><br />
+                            <br />
+                        </li>
+
+                        <li>Make sure to check 'Enable Calendar Feeds"<br />
+
+                            <a href="Images/F00_D2L_Calendar_Feeds.png" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/F00_D2L_Calendar_Feeds.png', 'popup'); return false;">
+                                <img src="Images/F00_D2L_Calendar_Feeds.png" alt="check enable calendar feeds" class="img-responsive" width="300" /></a><br />
+
+                        </li>
+
+                        <li>Click the Subscribe button (see Step 2) and select your course from the list, then copy the calendar feed, and paste it into Outlook.<br />
+
+                            <a href="Images/F00_SelectCourse.png" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/F00_SelectCourse.png', 'popup'); return false;">
+                                <img src="Images/F00_SelectCourse.png" alt="select course" class="img-responsive" width="300" /></a><br />
+
+
+                            <a href="Images/F00_CalendarFeedUrl.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/F00_CalendarFeedUrl.JPG', 'popup'); return false;">
+                                <img src="Images/F00_CalendarFeedUrl.JPG" alt=" calendar feed" class="img-responsive" width="300" /></a><br />
+                            <br />
+                        </li>
+
+                        <li>Open Outlook Desktop, choose File&gt;Account Settings&gt;Account Settings...&nbsp;&nbsp; When the dialog box appears choose the &quot;Internet Calendars&quot; tab, click &quot;New...&quot;&nbsp; Paste the D2L calendar feed url, click &quot;Add&quot;, use the course name as the folder name, click OK, then click close.
+                <br />
+                            <a href="Images/F00_OutlookCalendarFeed.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/F00_OutlookCalendarFeed.JPG', 'popup'); return false;">
+                                <img src="Images/F00_OutlookCalendarFeed.JPG" alt=" calendar feed" class="img-responsive" width="300" /></a><br />
+                        </li>
+
+                        <li>It will take several seconds to install, then your Outlook Calendar will appear with the new calendar feed for this course.<br />
+                            You may need to adjust your calendar settings to view the due dates properly.<br />
+                            'Week' view is shown below instead of the typical 'Work Week' view so that you can see the Saturday assignment due dates.<br />
+
+
+                            <a href="Images/F00_OutlookCalendar.png" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/F00_OutlookCalendar.png', 'popup'); return false;">
+                                <img src="Images/F00_OutlookCalendar.png" alt="outlook calendar" class="img-responsive" width="300" /></a><br />
+                        </li>
+
+                        <li>Repeat as desired to add calendars from other D2L courses.<br />
+                            You can also subscribe to calendars from your favorite sports teams, if they make the feed available.<br />
+                            Ref: <a href="http://www.southendzone.com/ics/" class="bg-info text-white" target="_blank">http://www.southendzone.com/ics/</a><br />
+                        </li>
+
+                    </ol>
+
+                    <div class="col-lg-12 ">
+                        <p>
+                            (25) 10. After installing the D2L calendar feed for this course into your Outlook desktop client, take a screenshot of this course's calendar in Outlook using the Snipping tool.
+                            <br />
+                            Make sure your screenshot includes your username in the Outlook title bar.<br />
+                            Save the screenshot  as &quot;Ex7_OutlookCalendar&quot; as a .gif, .png or .jpg file in the same folder location as the Exercise 1 screenshot as you will be needing it later.
+                        </p>
+                    </div>
+                    <hr />
+                </div>
+                <div class="col-lg-12 text-danger">
+                    <h2>Screenshot Ex7</h2>
+                    <hr />
+                </div>
+
+
+                <div id="PDFfileCreation2">&nbsp;</div>
+
+                <div class="col-lg-12"><a href="#ExercisePDF1" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+                <div id="ExercisePDF2" class="collapse in  col-lg-12">
+                    <p>
+                        You will create one .pdf (portable document format) file from the three screenshots (Ex5, Ex6, Ex7).
+                    </p>
+
+
+
+
+                    <h2>PDF Screenshot Method  1</h2>
+
+                    <p>About August 2022 'Print Pictures with Microsoft Print to PDF' (Method 2, below) became unstable so this is the preferred method.<br />
+                                               
+                    </p>
+
+                    <ol>
+                        <li>Open a blank Word Document</li>
+                        <li>Open 'File Explorer' and navigate to the folder containing your screenshots:<br />
+                              <code><span id="qqzqPath"></span></code>
+                            <script>document.getElementById("qqxqPath").innerHTML = Path; </script>
+                            <br />
+                        </li>
+                        <li>Select all the screenshot files and drag them into the Word Document</li>
+                        <li>In Word, select File>Print, then select 'Microsoft Print to PDF'</li>
+                        <li>Save the file as 'Formative00_Part1.pdf' to the folder: <br />
+                             <code><span id="qyqPath"></span></code>
+                            <script>document.getElementById("qyqPath").innerHTML = Path; </script>
+                            <br />
+
+                        </li>
+                    </ol>
+
+                            <a href="Images/PdfWord.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/PdfWord.PNG', 'popup'); return false;">
+                                <img alt="Print to PDF" class="img-rounded img-responsive" src="Images/PdfWord.PNG" width="300" /></a>
+                            <br />
+
+                    <hr />
+                    <hr />
+
+
+
+
+
+                    <h2>PDF Screenshot Method  2</h2>
+
+                    <ol>
+                        <li>Open File Explorer, navigate to your ' <code><span id="ozPath"></span></code>
+                            <script>document.getElementById("ozPath").innerHTML = Path; </script>
+                            ' folder.<br />
+                            Make sure the screenshot files are properly named.</li>
+                        <li>Select all of the screenshots. </li>
+                        <li>Right Click and select &#39;Print&#39; from the pop-up menu.</li>
+                        <li>In the bottom center of the &#39;Print Pictures&#39; dialog box <strong>uncheck</strong> the box &quot;Fit picture to frame&quot;</li>
+                        <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;Formative00_Part1.pdf&quot; in your ' <code><span id="qxxqPath"></span></code>
+                            <script>document.getElementById("qxxqPath").innerHTML = Path; </script>
+                            ' folder.<br />
+                            <a href="Images/PrintToPdf.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/PrintToPdf.PNG', 'popup'); return false;">
+                                <img alt="Print to PDF" class="img-rounded img-responsive" src="Images/PrintToPdf.PNG" width="300" /></a>
+                            <br />
+                        </li>
+                        <li>You have created a PDF file that contains all 4 screenshots. It is viewable in your Chrome browser, or using Adbobe Acrobat Reader.<br />
+                            Do not worry about the order of the screenshots, nor the rotation.</li>
+
+                    </ol>
+
+
+                    <div class="col-lg-12 text-primary">
+                        <p><strong>(25) 11. Upload your 'Formative00_Part2.pdf' file to the D2L 'Formative00_Part2' Assignment folder.</strong></p>
+
+                    </div>
+                    <hr />
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="Part3" class="col-lg-12 tab-pane fade">
+
+                <!-- Calculate the correct Path for saving the files -->
+                <!--	<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script> -->
+
+
+                <div class="row col-lg-12">
+                    <div class="col-lg-4 h3 text-danger">225 points</div>
+                    <div class="col-lg-4 h2 text-center">Part 3</div>
+                    <div class="col-lg-1"></div>
+                </div>
+
+
+
+                <div class="col-lg-12"><a href="#Exercise08" class="btn btn-info" data-toggle="collapse">Exercise 8-VPN</a></div>
+                <div id="Exercise08" class="collapse in  col-lg-12">
+                    <p>
+                        This MUST be done while you are off-campus, or in Somsen 301 using the USB-C dock with the network patch cable designated as &#39;HBC VPN&#39;, which is located at station 17.<br />
+                        If your laptop is wired to the WSU network or connected to the WSU wireless network (Warrior or Wazoo) it will not be able to connect to the VPN.<br />
+                        First read (and later refer to) these instructions on connecting to the WSU VPN: <a href="https://learn.winona.edu/wiki/VPN" target="_blank" class="bg-info text-white">https://learn.winona.edu/wiki/VPN</a><br />
+                        Note:  For additional assistance, and if the above hyperlink does not work, search the WSU website for &quot;Cisco VPN&quot; 
+                    </p>
+                    <p>The following instructions are for use when in Somsen 301.</p>
+                    <ol>
+                        <li>Turn off your Wi-Fi on your laptop.</li>
+                        <li>Connect to the HBC VPN USB Type-C 3.1 cable that attaches to the HP dock<br />
+                            <div>
+                                <a href="Images/ssVpn.jpg" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssVPN.JPG', 'popup'); return false;">
+                                    <img src="Images/ssVpn.jpg" alt="USB Type-C dock" class="img-rounded img-responsive" width="300" /></a>
+                            </div>
+                        </li>
+                        <li>Wait a few seconds, do a Google search to check your IP address.<br />
+                            <div>
+                                <a href="Images/ssWhatsMyIP.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssWhatsMyIP.JPG', 'popup'); return false;">
+                                    <img src="Images/ssWhatsMyIP.JPG" alt="check IP" class="img-rounded img-responsive" width="300" />
+                                </a>
+                            </div>
+                        </li>
+                        <li>Click the Windows button, type &quot;Cisco AnyConnect&quot; and press enter to bring up the login dialog box.</li>
+                        <li>Click the &#39;Connect&#39; button, in the Username box enter your StarID, enter your WSU network password, and click &#39;OK&#39;:&nbsp;
+                    <br />
+                            <a href="Images/ssVpn01.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssVPN01.JPG', 'popup'); return false;">
+                                <img alt="VPN login" class="img-rounded img-responsive" src="Images/ssVpn01.JPG" width="300" /><br />
+                            </a>
+
+
+                        </li>
+                        <li>After a few seconds the dialog box will minimize and an icon will appear in the Task Tray.&nbsp;
+                <br />
+                            <img src="Images/ssVPN02.JPG" alt="dialog box" class="img-rounded img-responsive" width="100" />
+                            <br />
+                            Double click it to open the dialog box. Then click the &#39;gear&#39; in the lower left to show the Statistics.&nbsp;<br />
+
+                            <a href="Images/ssVPN03.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssVPN03.JPG', 'popup'); return false;">
+                                <img src="Images/ssVPN03.JPG" alt="export stats" class="img-rounded img-responsive" width="300" /><br />
+                            </a>
+
+                        </li>
+
+                        <li>Click the &#39;Export Stats...&#39; button, save the file &#39;test.txt&#39; in the folder ' <code><span id="pPath"></span></code>
+                            <script>document.getElementById("pPath").innerHTML = Path; </script>
+                        </li>
+                        <li>Open test.txt and print it as a pdf file named Ex8.pdf<br />
+                            It will look like this:
+                    <br />
+                            <a href="Images/ssVPN04.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ssVPN04.JPG', 'popup'); return false;">
+                                <img src="Images/ssVPN04.JPG" alt="vpn stats" class="img-rounded img-responsive" width="300" /><br />
+                            </a>
+                            &nbsp;</li>
+                        <li>When done, make sure to turn your computer WiFi on again.
+                        </li>
+                    </ol>
+                    <div class="col-lg-12 text-primary">
+                        <p>
+                            <strong>(25) 12. Make sure to print the Cisco VPN Statistics file as &#39;Ex8.pdf&#39;&#39; and save it in the folder ' </strong><code><span id="gPath"></span></code>
+                            <strong>
+                                <script>document.getElementById("gPath").innerHTML = Path; </script>
+                                '
+                            </strong>
+                            <br />
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Print PDF file Ex8</h2>
+                    <hr />
+                </div>
+
+
+
+
+
+
+
+
+                <div class="col-lg-12"><a href="#Exercise09" class="btn btn-info" data-toggle="collapse">Exercise 9-PC Hardware Check</a></div>
+
+                <div id="Exercise09" class="collapse in  col-lg-12">
+                    <p>
+                        To succeed in this course, and in your career, it is essential that your computer (hardware and software) is functioning correctly.  
+						<br />
+                        In this exercise you will perform a hardware check.  At the end of Formative00, Part 3 you are advised to update your software.<br />
+                        Before you perform a hardware check, make sure to connect your laptop to a power supply and restart it, applying any updates.<br />
+                    </p>
+                    <ol>
+                        <li>After your computer has restarted, click Start, type in <code>HP PC Hardware</code><br />
+                            Note: if not found, or to install latest version, click Start, type in &quot;hp pc hardware diagnostics&quot; and click &#39;Get&#39; to install.<a href="https://www8.hp.com/us/en/campaigns/hpsupportassistant/pc-diags.html" target="_blank" class="bg-info text-white"> </a>
+                            <br />
+
+                            <a href="Images/HpHWDiag.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/HpHWDiag.PNG', 'popup'); return false;">
+                                <img src="Images/HpHWDiag.PNG" class="img-responsive img-rounded" alt="HP PC diagnostics" width="300" /></a>
+                            <span class="text-center">HP PC Hardware in Microsoft Store</span><br />
+
+                        </li>
+                        <li>Press Enter
+                        </li>
+                        <li>Select 'System Tests', 'System Fast Test', then click 'Run Once'
+                        </li>
+                        <li>A series of tests will check your hardware performance.<br />
+                            <span class="alert-danger">If any test fails, go to tech support in Somsen 207 for assistance in resolving the problem.</span>
+                        </li>
+                    </ol>
+
+                    <p>
+                        <a href="Images/HPDiag_1_5_8.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/HPDiag_1_5_8.PNG', 'popup'); return false;">
+                            <img src="Images/HPDiag_1_5_8.PNG" class="img-responsive img-rounded" alt="HP PC diagnostics" width="300" /></a>
+                        <span class="text-center">HP PC Hardware application interface</span><br />
+                    </p>
+
+                    <p>
+                        Note- other in-depth testing and computer information is available using the <a href="Images/HPSupportAssistant.PNG" target="_blank" class="bg-info text-white">HP Support Assistant</a>.
+                    </p>
+                    <p>
+                        Do not forget to check <a href="Images/SoftwareCenter.PNG" target="_blank" class="bg-info text-white">Software Center </a>(Start, type &#39;Software Center&#39;) for the latest Windows and other updates.
+                    </p>
+
+                    <div class="text-primary">
+                        <p>
+                            <strong>(25) 13. Use the Snipping Tool to make a screenshot of  the 'HP PC Hardware Diagnostics Window' showing that your laptop 'Passed' ALL tests.
+                            </strong>
+                            <br />
+
+                            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                            Save the screenshot  as &quot;Ex9&quot; in your '<code> <span id="bPath"></span></code>
+                            <script>document.getElementById("bPath").innerHTML = Path;</script>
+                            ' folder. 
+                    <br />
+
+                            It can be either a .jpg or .png file.
+                    <br />
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Screenshot Ex9</h2>
+                    <hr />
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="col-lg-12"><a href="#Exercise10" class="btn btn-info" data-toggle="collapse">Exercise 10-Publications</a></div>
+                <div id="Exercise10" class="collapse in  col-lg-12">
+
+                    <p>Publications:</p>
+                    <p>
+                        To keep informed, you are strongly encouraged to read the many magazines available to you at no charge through Flipster.
+                <br />
+                        Through the Krueger Library, you have access to online versions of <i>The</i> <i>New York Times, The Wall Street Journal</i>, and <i>Flipster</i> magazines.
+                    </p>
+                    <p>
+                        Instructions are below. &nbsp;If you have questions, please contact the Krueger Library.
+                    </p>
+                    <p>
+                        &nbsp;
+                    </p>
+                    <p>
+                        <b><i>New York Times</i>:</b>
+                    </p>
+                    <p>
+                        1) Click on this link: <a href="https://libguides.winona.edu/az.php?a=n" target="_blank" class="bg-info text-white">https://libguides.winona.edu/az.php?a=n</a>
+                    </p>
+                    <p>
+                        2) 
+                		From the list choose &nbsp; “New York Times (Institutional Subscription)”
+                    </p>
+                    <p>
+                        3) For your username, use your <code>StarID@winona.edu</code>. Then choose a password and indicate that you are “Student”. Choose your graduation year.
+                    </p>
+                    <p>
+                        4) You may also have access to the NYT app through <a href="https://learn.winona.edu/wiki/WSU_Apps" target="_blank" class="bg-info text-white">WSU Apps</a>.
+                    </p>
+                    <p>
+                        <b>*To subscribe, you must sign up on campus.*</b>
+                    </p>
+                </div>
+
+                <div class="col-lg-12">
+                    <p class="text-primary"><strong>(25) 14. After subscriping to the New York Times, login and take a screenshot of the current edition's home page using the Snipping tool.</strong></p>
+                    <p>
+                        Save the screenshot  as &quot;Ex10&quot; in your ' <code><span id="hPath"></span></code>
+                        <script>document.getElementById("hPath").innerHTML = Path; </script>
+                        ' folder.<br />
+                    </p>
+                </div>
+
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Screenshot Ex10NYT</h2>
+                    <hr />
+                </div>
+
+                <div class="col-lg-12">
+                    <p>
+                        <b><i>Wall Street Journal</i></b>
+                    </p>
+                    <p>
+                        1) Click on this link: <a href="https://libguides.winona.edu/az.php?a=w" target="_blank" class="bg-info text-white">Wall Street Journal </a>and search for 'Wall Street Journal', follow the instructions.
+                    </p>
+                    <p>
+                        2) Enter your StarID and the password associated with your StarID
+                    </p>
+                    <p>
+                        3) Follow the instructions and fill out the subscription form
+                    </p>
+                    <p>
+                        4) Users with an existing account have the option to connect to the institutional subscription at the bottom of the “Create Account” page.
+                    </p>
+                    <p>
+                        5) Repeat these steps every 180 days.
+                    </p>
+                    <p>
+                        You may also have access to the WSJ app through <a href="https://learn.winona.edu/wiki/WSU_Apps" target="_blank" class="bg-info text-white">WSU Apps</a>.
+                    </p>
+                    <p>
+                        &nbsp;
+                    </p>
+                </div>
+
+                <div class="col-lg-12">
+                    <p class="text-primary"><strong>(25) 15. After subscribing to the Wall Street Journal, login and take a screenshot of the front page using the Snipping tool.</strong></p>
+                    <p>
+                        Save the screenshot  as &quot;Ex10WSJ&quot; in your ' <code><span id="jPath"></span></code>
+                        <script>document.getElementById("jPath").innerHTML = Path; </script>
+                        ' folder.<br />
+                    </p>
+                </div>
+
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Screenshot Ex10WSJ</h2>
+                    <hr />
+                </div>
+
+
+                <div class="col-lg-12">
+
+                    <p>
+                        The Krueger Library now has access to many popular titles (Business Week, Fast Company, Time, Newsweek, Entrepreneur and many more) on your laptop or iPad!&nbsp; To learn how to access these, please consult this library guide.
+                <br />
+                        <a href="https://libguides.winona.edu/c.php?g=611626&amp;p=4247234" target="_blank" class="bg-info text-white">https://libguides.winona.edu/c.php?g=611626&amp;p=4247234</a>
+                    </p>
+
+                    <p>
+
+                        <a href="Images/Flipster.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/Flipster.png', 'popup'); return false;">
+                            <img class="img-responsive" alt="flipster" src="Images/Flipster.PNG" width="300" /></a>
+                    </p>
+
+                </div>
+
+                <div class="col-lg-12">
+                    <p class="text-primary"><strong>(25) 16. After accessing Flipster, open the latest issue of Wired magazine and take a screenshot of the cover using the Snipping tool.</strong></p>
+                    <p>
+                        Save the screenshot  as &quot;Ex10Flip&quot; in your ' <code><span id="kPath"></span></code>
+                        <script>document.getElementById("kPath").innerHTML = Path; </script>
+                        ' folder.<br />
+                    </p>
+                </div>
+
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Screenshot Ex10Flip</h2>
+                    <hr />
+                </div>
+
+
+
+
+
+
+                <div id="PDFfileCreation">&nbsp;</div>
+
+                <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation &amp; Combination</a></div>
+
+                <div id="ExercisePDF" class="collapse in  col-lg-12">
+                    <p>
+                        You will be creating one .pdf (portable document format) file from the screenshots that you have taken (Ex9, EX10NYT, EX10WSJ, Ex10Flip), and the pdf that you have printed from the VPN log file.
+                    </p>
+
+
+
+                    <h2>PDF Screenshot Method  1</h2>
+
+                    <p>About August 2022 'Print Pictures with Microsoft Print to PDF' (Method 2, below) became unstable so this is the preferred method.<br />
+                                               
+                    </p>
+
+                    <ol>
+                        <li>Open a blank Word Document</li>
+                        <li>Open 'File Explorer' and navigate to the folder containing your screenshots:<br />
+                              <code><span id="q1xqPath"></span></code>
+                            <script>document.getElementById("q1xqPath").innerHTML = Path; </script>
+                            <br />
+                        </li>
+                        <li>Select all the screenshot files and drag them into the Word Document</li>
+                        <li>In Word, select File>Print, then select 'Microsoft Print to PDF'</li>
+                        <li>Save the file as 'Screenshots.pdf' to the folder: <br />
+                             <code><span id="q2yqxPath"></span></code>
+                            <script>document.getElementById("q2yqxPath").innerHTML = Path; </script>
+                            <br />
+
+                        </li>
+                    </ol>
+
+                            <a href="Images/PdfWord.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/PdfWord.PNG', 'popup'); return false;">
+                                <img alt="Print to PDF" class="img-rounded img-responsive" src="Images/PdfWord.PNG" width="300" /></a>
+                            <br />
+
+                    <hr />
+                    <hr />
+
+
+
+
+
+                    <h2>PDF Screenshot Method  2</h2>
+
+                    <ol>
+                        <li>Open File Explorer, navigate to your ' <code><span id="o1Path"></span></code>
+                            <script>document.getElementById("o1Path").innerHTML = Path; </script>
+                            ' folder.<br />
+                            Make sure the screenshot files are properly named.</li>
+                        <li>Select all of the screenshots. </li>
+                        <li>Right Click and select &#39;Print&#39; from the pop-up menu.</li>
+                        <li>In the bottom center of the &#39;Print Pictures&#39; dialog box <strong>uncheck</strong> the box &quot;Fit picture to frame&quot;</li>
+                        <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;Screenshots.pdf&quot; in your ' <code><span id="q1qPath"></span></code>
+                            <script>document.getElementById("q1qPath").innerHTML = Path; </script>
+                            ' folder.<br />
+                            <a href="Images/PrintToPdf.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/PrintToPdf.PNG', 'popup'); return false;">
+                                <img alt="Print to PDF" class="img-rounded img-responsive" src="Images/PrintToPdf.PNG" width="300" /></a>
+                            <br />
+                        </li>
+                        <li>You have created a PDF file that contains all 4 screenshots. It is viewable in your Chrome browser, or using Adbobe Acrobat Reader.<br />
+                            Do not worry about the order of the screenshots, nor the rotation.</li>
+
+                    </ol>
+
+                    <h3>Combine Screenshots using PDFill</h3>
+
+
+
+
+
+
+
+                    <div class="col-lg-12 ">
+                        <p><strong>Use PDFill (installed in <a href="#Exercise04">Exercise 4</a>) to merge the ScreenShots.pdf file with the Ex8.pdf file created in Exercise 8</strong>.<br />
+                            Save this combined file as &#39;Formative00_Part3.pdf&#39; in your ' <code><span id="mPath"></span></code>
+                            <script>document.getElementById("mPath").innerHTML = Path; </script>
+                            ' folder.<br /> </p>
+                        <p class="text-primary"><strong>(25) 17. Upload your 'Formative00_Part3.pdf' file to the D2L 'Formative00_Part3' Assignment folder.</strong></p>
+                        <br />
+
+                    </div>
+
+                    <hr />
+
+                </div>
+
+
+                <div class="col-lg-12"><a href="#Exercise11" class="btn btn-info" data-toggle="collapse">Exercise 11-Composing Professional Emails</a></div>
+
+                <div id="Exercise11" class="collapse in  col-lg-12">
+                    <p>
+                        Composing and sending clear, professional emails is an important skill to learn and master for your career.<br />
+                        Google 'composing effective emails' and read some of the tips provided, <a href="https://jerz.setonhill.edu/writing/e-text/email/" target="_blank" class="bg-info text-white">such as these 10 tips </a>found at the Seton Hill website.<br />
+                    </p>
+
+                    <div>
+                        <!-- PgP toDo create js to replace (course) with the course entered into input box at top of page, then can remove subject line screenshot below -->
+
+                        For this Exercise	
+
+						<div id="testEmail"></div>
+                        <script>document.getElementById("testEmail").innerHTML = '<a href="mailto:' + xStarID + '@go.minnstate.edu' + '?subject=' + xClass + '-' + xSection + 'AssignmentFormative00&amp;cc=ppaulson@winona.edu&amp;body=I%20done%20completd%20AssignmentFormative00%20and%20I%20learnt%20a%20lot." class="bg-info text-white"  >' + 'click this link' + '</a>'</script>
+                        <p>
+                            and send a professional email to Professor Paulson stating that you have completed Exercise 11 of Assignment Formative00.&nbsp;<br />
+                        </p>
+
+                        <p>
+                            <a href="Images/ProfessionalEmail.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/ProfessionalEmail.PNG', 'popup'); return false;">
+                                <img alt="Professional email" class="img-rounded img-responsive" src="Images/ProfessionalEmail.PNG" width="300" /></a>
+                        </p>
+
+
+
+                        <p>Make sure to:</p>
+
+                        <ol>
+                            <li>Use the skills you learned to edit the email.</li>
+                            <li>Ensure the email has a professional tone.</li>
+                            <li>Proofread the email, check your grammar and correct any typographic errors.</li>
+                            <li><strong>Do not change the email subject line!</strong><br />
+                            </li>
+                        </ol>
+
+                        <p class="text-primary">
+                            <strong>(25) 18. When your email is ready, click the Send button.</strong>
+                        </p>
+
+
+
+                        <p>
+                            After sending the email check your Outlook account to confirm that you have received a copy of this email.<br />
+                            If you did not receive a confirming email, something is wrong, and you need to troubleshoot and resolve the problem.<br />
+                        </p>
+                    </div>
+                    <hr />
+
+                </div>
+
+
+
+                <div class="col-lg-12"><a href="#Exercise12" class="btn btn-info" data-toggle="collapse">Exercise 12-Web Database Submission</a></div>
+
+                <div id="Exercise12" class="collapse in  col-lg-12">
+
+                    <div class="row col-lg-12">
+                        <p>
+                            Most assignments require you to submit your name, course information and answer's to Professor Paulson's web database.<br />
+                            Doing this allows you and the professor to view a summary of your answers after you have created your website in the next few classes.<br />
+
+                            <!-- Enter your answer in the VALUE field below   GROK -->
+                            <input class="form-control" name="q18" type="text" id="q18" readonly="readonly" value="I am done so I am submitting this form to Professor Paulson's web database." />
+                        </p>
+                        <p class="text-primary">
+                            <strong>(50) 19. Press the &#39;SUBMIT&#39; button below, and read the instructions on the confirmation page.<br />
+                                Make sure to verify that you also received the confirmation email.  If not, it is time to begin troubleshooting.</strong>
+                        </p>
+                        <hr />
+                        <p>
+                            <br />
+                            After completing the submission process, return to this page to complete the software update exercise below.
+                        </p>
+                    </div>
+                    <hr />
+
+                </div>
+
+                <hr />
+
+                <div class="col-lg-12">
+                    <hr />
+                    <input class="text-danger btn-block btn-lg" name="Submit" value="SUBMIT" type="submit" />
+                    <br />
+                </div>
+
+
+
+                <p>&nbsp;</p>
+
+
+                <hr />
+                <hr />
+
+
+                <div class="col-lg-12"><a href="#ExerciseFinal" class="btn btn-info" data-toggle="collapse">Exercise Final-Software Update</a></div>
+
+                <div id="ExerciseFinal" class="collapse in  col-lg-12">
+
+
+                    <div class="row col-lg-12">
+                        <p>
+                            It is important to keep your laptop software and drivers up to date to minimize computer problems.<br />
+                            This last exercise must be done in Somsen 301 with your laptop connected to the HP USB-C dock. <br />
+                            Make sure you see both the power and wired network connection icons in the Task Tray.<br />                           
+                            Before beginning this procedure restart your laptop and apply any updates.
+                            
+                            
+                        </p>
+
+                        <ol>
+                            <li>Click this hyperlink:  <a href="https://ftp.ext.hp.com/pub/caps-softpaq/cmit/HPIA.html">HPIA client</a> 
+			<div>
+                <a href="Images/HPIA.png" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/HPIA.png', 'popup'); return false;">
+                    <img src="Images/HPIA.png" class="img-responsive img-fluid img-rounded" alt="installing HPIA" width="300" /></a>
+                Installing HPIA<br />
+                <br />
+            </div>
+                            </li>
+
+                            <li>After installation, run the program-it will update your computer bios, drivers and firmware.&nbsp; Then reboot/restart.&nbsp; Depending on how much updating is required, this could take some time (more than 30 minutes).<br />
+                                Note: if the process has not completed after 90 minutes, please reboot/restart your laptop.
+                            </li>
+
+                            <li>
+                                <strong>It is a good idea to repeat this process at the start of every semester.</strong>
+                            </li>
+
+                        </ol>
+
+                        <hr />
+                    </div>
+                    <hr />
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+    </form>
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../ReadOnly/bootstrap.js"></script>
+
+
+</body>
+</html>

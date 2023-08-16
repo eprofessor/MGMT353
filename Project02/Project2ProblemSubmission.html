@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file for student firstname, lastname, starid on students' pages -->
+	<script src="../constants.js"></script>
+
+	<!-- course constant file that contains semester, class, section pages -->
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+	<title>MGMT353 Project02 Problem</title>
+</head>
+
+<body onload="setVariables()">
+
+	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+		<input name="InstID" id="InstID" value="00617282" type="hidden">
+
+		<h1 class=" text-center">Project 2 Problem</h1>
+
+		<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="FirstName">First Name:</label>
+				<input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="LastName">Last Name:</label>
+				<input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="pin">StarID:</label>
+				<input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="email">Email:</label>
+				<input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+			</div>
+		</div>
+
+
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="semester">Semester:</label>
+				<input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="class">Class:</label>
+				<input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="section">Section:</label>
+				<input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="assignment">Assignment:</label>
+				<input class="form-control" name="assignment" id="assignment" value="P2Problem" type="text" readonly="readonly">
+			</div>
+		</div>
+		<!-- -end-Student, class and assignment information-end -->
+
+		<!-- Calculate the correct path for saving the files -->
+		<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+		<div class="col-lg-12 h3 text-danger">
+			50 Points
+            <hr />
+
+		</div>
+
+
+
+<div class="col-lg-12">
+
+		<h2>Each student must submit this form.<br />
+			Make sure to include names of all team members, even if you submitted them previously.
+			<br />
+			This form should be saved to your assignment website.</h2>
+		<table>
+
+			<tr>
+				<td>
+					<div>Team Name</div>
+				</td>
+				<th>
+					<label for="q1"></label>
+					<div>
+						<input type="text" name="q1" id="q1" class="form-control" />
+					</div>
+				</th>
+				<th width="20%" scope="col">
+					<div align="left"></div>
+				</th>
+				<th width="29%" scope="col">
+					<div align="left"></div>
+				</th>
+				<th width="2%" scope="col">&nbsp;</th>
+			</tr>
+			<tr>
+				<td>
+					<div align="right">Member 1 first name</div>
+				</td>
+				<td>
+					<label for="q2"></label>
+					<input type="text" name="q2" id="q2" class="form-control" /></td>
+				<td>
+					<div align="right">Member 1 last name</div>
+				</td>
+				<td>
+					<label for="q2"></label>
+					<input type="text" name="q3" id="q3" class="form-control" /></td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>
+					<div align="right">Member 2 first name</div>
+				</td>
+				<td>
+					<label for="q4"></label>
+					<input type="text" name="q4" id="q4" class="form-control" /></td>
+				<td>
+					<div align="right">Member 2 last name</div>
+				</td>
+				<td>
+					<label for="q1"></label>
+					<input type="text" name="q5" id="q5" class="form-control" /></td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>
+					<div align="right">Member 3 first name</div>
+				</td>
+				<td>
+					<label for="q2"></label>
+					<input type="text" name="q6" id="q6" class="form-control" /></td>
+				<td>
+					<div align="right">Member 3 last name</div>
+				</td>
+				<td>
+					<label for="q3"></label>
+					<input type="text" name="q7" id="q7" class="form-control" /></td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>
+					<div align="right">Member 4 first name</div>
+				</td>
+				<td>
+					<label for="q4"></label>
+					<input type="text" name="q8" id="q8" class="form-control" /></td>
+				<td>
+					<div align="right">Member 4 last name</div>
+				</td>
+				<td>
+					<label for="q5"></label>
+					<input type="text" name="q9" id="q9" class="form-control" /></td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>
+					<div align="right">Member 5 first name</div>
+				</td>
+
+				<td>
+					<label for="q5"></label>
+					<input type="text" name="q10" id="q10" class="form-control" /></td>
+				<td>
+					<div align="right">Member 5 last name</div>
+				</td>
+				<td>
+					<label for="q5"></label>
+					<input type="text" name="q11" id="q11" class="form-control" /></td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+
+
+
+
+		<br />
+		<br />
+
+
+		<table bgcolor="#00FFFF">
+			<tr>
+				<td>Brief Description of Product and Research</td>
+				<td>
+					<label for="q12"></label>
+					<input type="text" name="q12" id="q12" size="180" maxlength="180" class="form-control" /><br />
+				</td>
+			</tr>
+			<tr>
+				<td>Concerns: Please note any concerns you may have</td>
+				<td>
+					<input type="text" name="q13" id="q13" size="180" maxlength="180" class="form-control" /><br />
+				</td>
+			</tr>
+		</table>
+	</div>
+
+		<hr />
+		<hr />
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+	</form>
+
+
+
+	<!-- Creative Commons License Info -->
+	<div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+	<div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../../ReadOnly/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>
