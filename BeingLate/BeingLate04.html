@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file for student firstname, lastname, starid on students' pages -->
+	<script src="../constants.js"></script>
+
+	<!-- course constant file that contains semester, class, section pages -->
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>BUSA353 BeingLate04</title>
+</head>
+
+<body onload="setVariables()">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <h1 class=" text-center">Part 4-Anchoring, Chapter 14</h1>
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="BeingLate04" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            150 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+   <p>   After completing this assignment you will be able to explain and make use of:</p>
+  <ul>
+    <li>the power of ideas</li>
+    <li>the importance of trust</li>
+    <li>the permanence and accelerating pace of change</li>
+  </ul>
+  <hr />
+</div>
+
+                <div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+
+        <div id="Overview" class="collapse in  col-lg-12">
+
+
+
+<p>The purpose of this assignment is review and reflect on what you are learning by reading '<a href="https://www.amazon.com/Thank-You-Being-Late-Accelerations/dp/0374273537/" class="bg-info text-white" target="_blank">Thank You for Being Late</a>'. <br />
+</p>
+
+            </div>
+        <hr />
+
+
+
+                <!--Exercise 1-->
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Chapter 14</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+  <p>
+
+
+
+  As you read Chapter 14-From Minnesota to the World and Back of 'Thank You for Being Late'  think about and  this question.
+  <p >We will discuss this material during class.</p>
+  <p ><strong>1. (100) Friedman reflects on his life-growing up in Minnesota, experiencing Middle East culture, experiencing Washington DC culture.<br>
+    Technology is accelerating the pace of change beyond what humans can comfortably adapt to.<br>
+  But developing trust in a diverse society takes time.</strong></p>
+  <p ><strong>Reflecting on what you have learned and experienced in this course, briefly describe your thoughts on how humans can adapt to developing 
+    trust at a more rapid pace.</strong><br>
+
+
+
+                  <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q1" id="q1" size="120" maxlength="120" class="form-control" value="trust:">
+
+  </p>
+            </div>
+  <hr />
+  <hr />
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+
+            <p>
+                Use web editing software such as Dreamweaver or Visual Studio to complete and publish this assignment to your website.<br />
+            </p>
+            (50) 2. Assignment submission<br />
+            Use a web browser to view this completed page from your website.&nbsp;
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        <br />
+            <br />
+            Verify that your assignment was submitted correctly by clicking the &quot;Check Assignment Submissions&quot; button on your website home page.
+            <br />
+            <br />
+            If your submission does not show up in the list (there are two lists- in date order, and in Assignment order) you did something wrong.<br />
+            Please use this as a learning opportunity, correct any errors, and try again.e two lists- in date order, and in Assignment order) you did something wrong.<br />
+            Please use this as a learning opportunity and try again.
+        <hr />
+
+        </div>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.js"></script>
+
+</body>
+</html>

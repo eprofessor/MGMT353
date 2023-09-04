@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file for student firstname, lastname, starid on students' pages -->
+	<script src="../constants.js"></script>
+
+	<!-- course constant file that contains semester, class, section pages -->
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+    <title>BUSA353 BeingLate02</title>
+</head>
+
+<body onload="setVariables()">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <h1 class=" text-center">Part 2-Accelerating, Chapters 2 to 6 </h1>
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="BeingLate02" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            400 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <p>After completing this assignment you will be able to explain and make use of:</p>
+            <ul>
+                <li>The important events that took place in 2007</li>
+                <li>Moore's Law</li>
+                <li>Supernovas</li>
+                <li>The Market</li>
+                <li>Mother Nature</li>
+                <li>Accelerating pace of change caused by these factors</li>
+            </ul>
+            <hr />
+
+        </div>
+
+        <div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+
+        <div id="Overview" class="collapse in  col-lg-12">
+
+            <p>
+                The purpose of this assignment is review and reflect on what you are learning by reading '<a href="https://www.amazon.com/Thank-You-Being-Late-Accelerations/dp/0374273537/" class="bg-info text-white" target="_blank">Thank You for Being Late</a>'.
+                <br />
+                As you read chapters 2 through 6 of 'Thank You for Being Late'  answer these questions.
+            </p>
+            <p>We will discuss this material during class. </p>
+            <hr>
+            As you read Chapter 2-What the Hell Happened in 2007&quot; of 'Thank You for Being Late'  think about and answer these questions.
+  <p>We will discuss this material during class.</p>
+
+        </div>
+
+        <!--Exercise 1-->
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Chapter 2</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+            <p>
+                In Part 1-Reflecting Friedman lists the  3 factors that are driving rapid change in today's world. Technology, Globalization and Climate Change. 
+            In Part 2-Accelerating, he begins to explore and discuss these factors in more detail, breaking them down into 4 major concepts. As proof that change driven by improvemnts in technology is occuring quickly, he provides examples of nine major innovations that have begun the acceleration process.
+            </p>
+            <p>
+                <b>(25) 1. List these nine innovations that came on the scene in 2007.</b><br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q1" id="q1" size="120" maxlength="120" class="form-control" value="The Nine Innovations:">
+
+            <p>
+                List these four major concepts, (or as he calls them, the underlying accelerations) by both Friedman's term and the more generally accepted term.<br>
+                Hint: look at the chapter titles.
+            </p>
+
+            <p>
+                <b>(25) 2. Concept 1
+                </b>
+                <br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Concept 1:">
+
+            <p>
+                <b>(25) 3. Concept 2
+                </b>
+                <br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q3" id="q3" size="120" maxlength="120" class="form-control" value="Concept 2:">
+
+            <p>
+                <b>(25) 4. Concept 3
+                </b>
+                <br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q4" id="q4" size="120" maxlength="120" class="form-control" value="Concept 3:">
+
+            <p>
+                <b>(25) 5. Concept 4
+                </b>
+                <br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Concept 4:">
+            <br />
+
+        </div>
+
+        <!--Exercise 2-->
+
+        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Chapter 2</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+
+            <p>Friedman discusses how the acceleration of technology changes leads to obsoleting companies (disruption), with further accleration leading to people feeling that the just cannot keep up (dislocation). ref page 28.</p>
+            <p>Global technical diffusion  </p>
+
+            <p>
+                <b>(25) 6. In the period AD 1000 to AD 1200 how long did it take for technical changes to spread throughout the known world?<br>
+                </b>
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q6" id="q6" size="120" maxlength="120" class="form-control" value="">
+
+            <p>
+                <b>(25) 7. Around the year 1900 how long did it take for technical changes to spread throughout the known world?<br />
+                </b>
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q7" id="q7" size="120" maxlength="120" class="form-control" value="">
+
+            <p>
+                <b>(25) 8. Today, in the year 2017, how long does it take for technical changes to become ubiquitous and uncomfortably changing  the  world?<br />
+                </b>
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q8" id="q8" size="120" maxlength="120" class="form-control" value="">
+            <br />
+        </div>
+
+
+        <!--Exercise 3-->
+
+        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Chapter 2</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+
+            <p>
+                The Human Adaptation Rate, the rate at which we as humans can adpat to a new technology, was down from 3 generations (100 years) in the year 1000 to 1 generation by the year 1900.
+                <br>
+                Today we can adapt in about 10 to 15 years.
+  ref page 31.<br>
+                Please refer to the graphs on pages 32 and 34 for more detail.
+            </p>
+            <p>Discuss with members of the class this concept of Human Adaptation, then answer the following questions.</p>
+
+            <p>
+                <b>(25) 9. In the future, how do we as a society create laws and regulations, which normally takes 10 to 15 years, to address issues arising out of innovations which has a life span of 5 to 7 years? In other words, by the time the law is enacted, the technology it addresses is obsolete. During your discussion think about the effect of businesses such as Uber, Lyft and AirBNB.<br />
+                </b>
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q9" id="q9" size="120" maxlength="120" class="form-control" value="">
+            <br />
+
+            <p>
+                <b>(25) 10. On page 34, in discussing human adaptability and the rate of change of technology, Friedman states that by 'learning faster and governing smarter' we as a society can bridge the gap. But this is at best a temporary solution. As time moves to the right, the gap between Human Adaptability and Technology increases again.
+                <br>
+                    What do you propose society do to develop another solution beyond  'learning faster and governing smarter'? Or do we simply accelerate those also?.<br />
+                </b>
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q10" id="q10" size="120" maxlength="120" class="form-control" value="">
+            <br />
+
+        </div>
+
+
+        <!--Exercise 4-->
+
+        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Chapter 3</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+
+            <p>
+                In this chapter Friedman discusses Moore's law, and the impact it is having on integrated circuits, memory units, networking systems, sofware and sensors.<br>
+                Consider the impact of merging social networking concepts with software development.  The result is GitHub, reference pages 64 to 69.
+            </p>
+
+            <p>
+                <b>(25) 11. Study the concept of GitHub and software collaboration. But realize that GitHub can be used for more than just sharing computer code.<br>
+                    What can be done with the GitHub model to innovate and address some of the problems in the world today?</b><br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input type="text" name="q11" id="q11" size="120" maxlength="120" class="form-control" value="Leveraging GitHub:">
+                <br />
+
+        </div>
+
+        <!--Exercise 5-->
+
+        <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Exercise 5-Chapter 4</a></div>
+
+        <div id="Exercise05" class="collapse in  col-lg-12">
+
+            <p>
+                In this chapter Friedman discusses the Supernova, and the impact it is having by melding advances in integrated circuits, memory units, networking systems, sofware and sensors, resulting in incredibly powerful computing resources and data storage that is readily available at low cost if you have a hi speed internet connection-which is rapidly occuring.<br>
+                In discussing advances in Artificial Intelligence a lot is said about Watson, and other IBM developed AI technology to solve problems in  areas besides games- medical research and oncology. reference pages 97 to 103.
+            </p>
+
+            <p>
+                <b>(25) 12. In this section there is a discussion about the possibility that computers are going to take over the world from humans.<br>
+                    An IBM scientist states that there is zero chance that an AI doing oncology research will suddenly start designing cars-presumably as a way to assuage our fears.
+    <br>
+                    But what is this scientist not considering? His reasoning may be correct now, but will it hold true for much longer? Briefly explain the next step in what is ahead in 'next generation AI'.<br>
+                    Note-this is not in the book, you need to consider these concepts, and formulate an idea.<br>
+                    Reference this video:  <a href="https://vimeo.com/7395079" class="bg-info text-white" target="_blank">Trillions</a> and consider the implications of what nature has been doing developing systems and solving problems for millions of years already....<br />
+                </b>
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q12" id="q12" size="120" maxlength="120" class="form-control" value="Next Generation AI:">
+            <br />
+
+        </div>
+
+        <!--Exercise 6-->
+
+        <div class=" col-lg-12"><a href="#Exercise06" class="btn btn-info" data-toggle="collapse">Exercise 6-Chapter 5</a></div>
+
+        <div id="Exercise06" class="collapse in  col-lg-12">
+
+            <p>
+                In this chapter Friedman discusses the Market, and the impact it is having on the global digital flows.<br>
+                These flows are impacting socialization (Facebook), finance (PayPal), education (MOOCs), lodging (Airbnb), transportation (Uber), shopping (Amazon), music (iTunes) and many others.<br>
+                More sectors of the global economy will continue to be disrupted as technology keeps advancing.<br>
+                Friedman mentions <a href="https://www.change.org/" class="bg-info text-white" target="_blank">Change.org</a>, an online petition platform with global reach. reference pages 153 to 154.<br>
+                Discuss this website with members of the class.
+            </p>
+
+            <p>
+                <b>(25) 13. What do you think is the next step in technical innovation that should be adopted by websites similar to the <a href="https://www.change.org/" class="bg-info text-white" target="_blank">Change.org</a></b><br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q13" id="q13" size="120" maxlength="120" class="form-control" value="Beyond Change.org:">
+            <br />
+
+        </div>
+
+        <!--Exercise 7-->
+
+        <div class=" col-lg-12"><a href="#Exercise07" class="btn btn-info" data-toggle="collapse">Exercise 7-Chapter 6</a></div>
+
+        <div id="Exercise07" class="collapse in  col-lg-12">
+
+            <p>
+                In this chapter Friedman discusses Mother Nature, which is his shorthand for climate change, population growth and the loss of biodiversity.<br>
+                These human propelled forces are having a dramatic impact on the future of all biological life on our planet.<br>
+                On page 158 he introduces the concept of a 'black elephant', a cross between a '<strong>black</strong> swan' event and 'the <strong>elephant</strong> in the room' which is visible to all but no one wants to talk about.<br>
+                Friedman mentions nine planetary boundaries on  pages 169 to 172 that which if breached could create a new state on Earth that may not be able to support modern civilization as we know it.<br>
+                Choose one of these planetary boundaries and discuss with members of the class how technology could be used to prevent us from breaching that boundary..
+            </p>
+
+            <p>
+                <b>(25) 14. What planetary boundary did you choose, and what do you propose?</b><br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q14" id="q14" size="120" maxlength="120" class="form-control" value="Planetary Boundary:">
+            <br />
+
+        </div>
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+
+            <p>
+                Use web editing software such as Dreamweaver or Visual Studio to complete and publish this assignment to your website.<br />
+            </p>
+            (50) 15. Assignment submission<br />
+            Use a web browser to view this completed page from your website.&nbsp;
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        <br />
+            <br />
+            Verify that your assignment was submitted correctly by clicking the &quot;Check Assignment Submissions&quot; button on your website home page.
+            <br />
+            <br />
+            If your submission does not show up in the list (there are two lists- in date order, and in Assignment order) you did something wrong.<br />
+            Please use this as a learning opportunity, correct any errors, and try again.
+        <hr />
+
+        </div>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.js"></script>
+
+</body>
+</html>
