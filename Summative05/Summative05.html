@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file for student firstname, lastname, starid on students' pages -->
+	<script src="../constants.js"></script>
+
+	<!-- course constant file that contains semester, class, section pages -->
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+
+    <title>MGMT353 Summative05</title>
+</head>
+
+<body onload="setVariables()">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <h1 class=" text-center">Business Model Canvas </h1>
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="Summative05" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            300 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+            <p>
+                The objective of this assignment is to practice creating a Business Model Canvas for your project.
+            </p>
+        </div>
+        <hr />
+        <div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+        <div id="Overview" class="collapse in  col-lg-12">
+
+            <p>
+                Ref:
+                <br>
+                Business Model Generation: pages 88 to 119<br />
+                Value Proposition Design: pages xv to xxi<br />
+                optional: Business Model Innovation Factory-pages 17 to 34<br />
+                </p>
+            <p>
+                <br />
+            </p>
+            <p>
+                Business Model Canvas resources:
+                <br />
+                <a href="the-business-model-canvas_BlankTemplate.pdf" class="bg-info text-white" target="_blank">Blank Canvas</a>- open in Adobe Acrobat Pro and fill in your information<br />
+                <a href="BusinessModelCanvas_BlankTemplate.docx" class="bg-info text-white" target="_blank">Microsoft Word version</a>
+                <br />
+                <a href="business_model_canvas_GuidelinesPoster.pdf" class="bg-info text-white" target="_blank">Guide Canvas</a>-  guiding questions for each of the 9 sections
+               
+            </p>
+        </div>
+
+        <div class="col-lg-12">
+            <hr />
+            <p class="text-center">Business Model Canvas Overview</p>
+
+<iframe class="img-responsive img-rounded center-block" src="https://www.youtube-nocookie.com/embed/QoAOzMTLP5s" allowfullscreen="true"></iframe>
+        </div>
+
+        <hr />
+
+        <!--Exercise 1-->
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Business Model Canvas</a></div>
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            <hr />
+
+            <p>
+                Develop a Business Model Canvas for 
+                your Project02 product or service.<br />
+            </p>
+            <p>
+                Refer to the <a href="business_model_canvas_GuidelinesPoster.pdf" class="bg-info text-white" target="_blank">Business 
+  Model Canvas</a> guide for a listing of the <a href="BMC_Questions.JPG" target="_blank" class="bg-info text-white">questions</a> you should be asking.<br />
+                Reference: <a href="https://canvanizer.com/new/business-model-canvas" class="bg-info text-white" target="_blank">Canvanizer Tool </a>
+            </p>
+
+            <p>
+                (25) 1. Customer Segments:
+                <br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Customer Segments:">
+            <hr />
+
+            <p>
+                (50) 2. Value Propositions:<br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Value Propositions:">
+            <hr />
+
+            <p>
+                (25) 3. Channels:<br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q3" id="q3" size="120" maxlength="120" class="form-control" value="Channels:">
+            <hr />
+
+            <p>
+                (25) 4. Customer Relationships:<br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q4" id="q4" size="120" maxlength="120" class="form-control" value="Customer Relationships:">
+            <hr />
+
+            <p>
+                (25) 5. Revenue Streams:<br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Revenue Streams:">
+            <hr />
+
+            <p>
+                (25) 6. Key Resources:<br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q6" id="q6" size="120" maxlength="120" class="form-control" value="Key Resources:">
+            <hr />
+
+            <p>
+                (25) 7. Key Activities:<br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q7" id="q7" size="120" maxlength="120" class="form-control" value="Key Activities:">
+            <hr />
+
+            <p>
+                (25) 8. Key Partnerships:<br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q8" id="q8" size="120" maxlength="120" class="form-control" value="Key Partnerships:">
+            <hr />
+
+            <p>
+                (25) 9. Cost Structure:<br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input type="text" name="q9" id="q9" size="120" maxlength="120" class="form-control" value="Cost Structure:">
+            <hr />
+        </div>
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+
+            <p>
+                Use web editing software such as Dreamweaver or Visual Studio to complete and publish this assignment to your website.<br />
+                <br />
+            </p>
+            (50) 10. Assignment submission<br />
+            Use a web browser to view this completed page from your website.&nbsp;
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        <br />
+            <br />
+            Verify that your assignment was submitted correctly by clicking the &quot;Check Assignment Submissions&quot; button on your website home page.
+            <br />
+            <br />
+            If your submission does not show up in the list (there are two lists- in date order, and in Assignment order) you did something wrong.<br />
+            Please use this as a learning opportunity, correct any errors, and try again.
+        <hr />
+
+        </div>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.js"></script>
+
+</body>
+</html>
+
+           
