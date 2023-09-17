@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file for student firstname, lastname, starid on students' pages -->
+	<script src="../constants.js"></script>
+
+	<!-- course constant file that contains semester, class, section pages -->
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MGMT353 Value Proposition Design</title>
+</head>
+
+<body onload="setVariables()">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <h1 class=" text-center">Value Proposition Design-Design Tweaks</h1>
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="VPD04" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            650 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+            <p>
+                The objective of this assignment is to develop a process to continuously improve your project design.
+            </p>
+            <hr />
+
+        </div>
+
+        <div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+        <div id="Overview" class="collapse in  col-lg-12">
+
+
+
+            <p>
+                Read:
+  Value Proposition Design: pages 70 to 213
+            </p>
+            <p>
+                This is a continuation of Value Proposition Design 01 and Value Proposition Design 02, and Value Proposition Design 03.
+                <br />
+                For this assignment keep working with members of your group on the product or service that you are developing.
+            </p>
+            <p>
+                <br>
+                Note: although you work together on your 'product', your answers to these questions do not have to be the same.<br />
+            </p>
+            <hr />
+            <hr />
+            <p>
+                Review the <a href="10-characteristics-of-great-value-propositions.pdf" class="bg-info text-white" target="_blank">10 characteristics of Great Value Propositions</a> (page 72)
+                <br>
+                and the <a href="10-prototyping-principles.pdf" class="bg-info text-white" target="_blank">10 Protoyping Principles</a>(page 76).
+            </p>
+
+            <hr />
+        </div>
+
+        <!--Exercise 1-->
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Ad-Libbing</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+
+            <p>Work with your group members on the '<a href="ad-lib-value-proposition-template.pdf" class="bg-info text-white" target="_blank">Ad-Lib Value Propostion Template</a>'. A copy is also available <a href="ad-lib-value-proposition-template.pdf" class="bg-info text-white" target="_blank">here</a>.</p>
+            <p>Note that you may need to revisit your Value Map and your Customer Profile. That is okay.</p>
+            <p>Open the Ad-Lib Value Propostion Template in Adobe Acrobat Pro and complete it.<a href="https://strategyzer.com/platform/exercises/fit/"></a></p>
+            <p>
+                1. (100) When done, save your template as a VPD04AdLib.pdf.
+                <br />
+                Note: Remember where you save it because you will be combining several pdf files for this assignment.
+            </p>
+            <p>
+                <img src="AdLib.JPG" class="img-responsive img-rounded" alt="Ad Lib Template" />
+            </p>
+            <hr />
+        </div>
+
+
+        <!--Exercise 2-->
+
+        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-High Value Jobs</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+
+
+            <p>Review the following resources:</p>
+            <p><a href="where-to-start.pdf" class="bg-info text-white" target="_blank">Where to Start</a>? page 89</p>
+            <p><a href="spark-ideas-with-design-constraints.pdf" class="bg-info text-white" target="_blank">Sparking Ideas</a> page 90</p>
+            <p>
+                Then download the '<a href="identify-high-value-jobs.pdf" class="bg-info text-white" target="_blank">Identify High Value Jobs</a>' worksheet, open it with Adobe Acrobat Pro, and fill it in.
+                <br>
+                refer to page 101.
+            </p>
+            <p>&nbsp;</p>
+            <p>
+                2. (100)&nbsp; When done, save your template as a VPD04HiValue.pdf file.<br>
+                Note: Remember where you save it because you will be combining several pdf files for this assignment.
+            </p>
+            <hr />
+
+        </div>
+
+        <!--Exercise 3-->
+
+        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Value Proposition Scorecard</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+
+            <p>Review the following resources:</p>
+            <p><a href="six-ways-to-innovate-from-the-customer-profile.pdf" class="bg-info text-white" target="_blank">Six Ways to Innovate</a> </p>
+            <p><a href="ground-rules-for-interviewing.pdf" class="bg-info text-white" target="_blank">Ground Rules for Interviewing</a></p>
+            <p><a href="a-day-in-the-life-worksheet.pdf" class="bg-info text-white" target="_blank">A Day in the Life</a> (also known in programming as Use Cases)</p>
+            <p>
+                Then answer the <a href="TenQuestionsToAssessYourValueProposition.docx" class="bg-info text-white" target="_blank">10 Questions to Assess Your Value Proposition</a>. refer to page 122<br>
+                Enter a score of 0 to 10 for each question.
+            </p>
+            <p>
+                <img src="ScoreCard.JPG" class="img-responsive img-rounded" alt="score card" />
+            </p>
+            <p>
+                3. (100)&nbsp; When done,  save the Word document as VPD0410Q.pdf<br>
+                Save it in the same location as your other .pdf files because you will be combining several .pdf files for this assignment.
+            </p>
+            <hr />
+        </div>
+
+        <!--Exercise 4-->
+
+        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-The Art of Critique</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+
+            <p>Review the following resources:</p>
+            <p><a href="master-the-art-of-critique.pdf" class="bg-info text-white" target="_blank">Master the Art of Critique</a> </p>
+            <p>Download and save this template to <a href="7-questions-to-assess-your-business-model-design.pdf" class="bg-info text-white" target="_blank">Assess Your Business Model Design</a> </p>
+            <p>Open the template in Adobe Acrobat Pro, place check marks by your answer for each question.</p>
+            <p>
+                <img src="AssessBusinessModel.JPG" class="img-responsive img-rounded" alt="assessing business model" />
+            </p>
+            <p>
+                4. (100)&nbsp; When done, save your template as VPD04Critique.pdf<br>
+                Note: Remember where you save it because you will be combining several pdf files for this assignment.
+            </p>
+
+            <hr />
+        </div>
+
+        <!--Exercise 5-->
+
+        <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Exercise 5-Testing</a></div>
+
+        <div id="Exercise05" class="collapse in  col-lg-12">
+
+            <p>Review the <a href="https://vimeo.com/84423056" class="bg-info text-white" target="_blank">OWLET International Business Model Competition </a>which gives a great overview of a product design.</p>
+            <p><a href="http://www.owletcare.com/" class="bg-info text-white" target="_blank">Owlet website</a></p>
+            <p>
+                <br />
+                5. (100) Reflect on this video.
+                <br>
+                What is the most important lesson you learned from this video?
+  <br />
+                <input type="text" name="q5" size="140" maxlength="140" id="q5" class="form-control" value="lesson:" />
+
+            </p>
+            <hr />
+
+
+
+
+
+        </div>
+
+
+
+
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+
+            <p>(100) 6. Using PDFill or Adobe Acrobat Pro, combine your four .pdf files into a file named VPD04.pdf  and upload it to  the D2L Assignment Folder &quot;VPD04&quot;&nbsp;</p>
+
+            <hr />
+
+            <p>
+                Use web editing software such as Dreamweaver or Visual Studio to complete and publish this assignment to your website.<br />
+            </p>
+            (50) 7. Assignment submission<br />
+            Use a web browser to view this completed page from your website.&nbsp;
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        <br />
+            <br />
+            Verify that your assignment was submitted correctly by clicking the &quot;Check Assignment Submissions&quot; button on your website home page.
+            <br />
+            <br />
+            If your submission does not show up in the list (there are two lists- in date order, and in Assignment order) you did something wrong.<br />
+            Please use this as a learning opportunity, correct any errors, and try again.<hr />
+
+        </div>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.js"></script>
+
+</body>
+</html>

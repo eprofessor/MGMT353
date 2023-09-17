@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
+    <script src="../js/constants.js"></script>
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>BUSA353 Value Proposition Design</title>
+</head>
+
+<body onload="setVariables()">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <h1 class=" text-center">Value Proposition Design-Customer Profile</h1>
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address">
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="VPD01" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            500 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+            <p>
+                The objective of this assignment is to develop a Value Proposition Design of your project.
+            </p>
+
+        </div>
+        <hr />
+
+        <div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+        <div id="Overview" class="collapse in  col-lg-12">
+
+
+<p   > Read: <br>
+  Value Proposition Design: pages 10 to 25</p>
+
+<p  >For this assignment work with members of your group and decide on a product or service that you want to provide to any customer of your choosing.<br>
+  It can be anything you decide-a new phone app that tracks the latest in fashion, or a website that provides information on a specific topic, or a new home automation device.  </p>
+<p  >Note: although you work together on your 'product', your answers to these questions do not have to be the same.<br />
+</p>
+            </div>
+<hr />
+
+        <!--Exercise 1-->
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Business Model Canvas</a></div>
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            <hr />
+
+
+ <p>Using Trigger Questions to Develop a Customer Profile </p>
+<p>Develop at least 3 specific items each for Customer Jobs, Pains and Gains</p>
+<p><a href="https://assets.strategyzer.com/assets/vpd/resources/customer-jobs-trigger-questions.pdf" class="bg-info text-white" target="_blank"
+
+>Customer Jobs Questions</a></p>
+<p><strong><br />
+  1. (50) Jobs  1-<br />
+ <input type="text" name="q1" size="140" maxlength="140" id="q1" value="j1:"/><br /></strong></p>
+
+<p><strong>2.. (50) Jobs  2-<br />
+  </strong>
+ <input type="text" name="q2" size="140" maxlength="140" id="q2" value="j2:"/><br /></p>
+<p><strong>3. (50) Jobs  3-<br />
+  </strong>
+ <input type="text" name="q3" size="140" maxlength="140" id="q3" value="j3:"/><br /></p>
+<hr>
+<p><a href="https://assets.strategyzer.com/assets/vpd/resources/customer-pains-trigger-questions.pdf" class="bg-info text-white" target="_blank"
+
+>Customer Pains Qusetions</a></p>
+<p><strong>4. (50) Pains 1-<br />
+  </strong>
+ <input type="text" name="q4" size="140" maxlength="140" id="q4" value="p1:"/><br /></p>
+<p><strong>5. (50) Pains  2-<br />
+  </strong>
+ <input type="text" name="q5" size="140" maxlength="140" id="q5" value="p2:"/><br /></p>
+<p><strong>6. (50) Pains  3-<br />
+  </strong>
+ <input type="text" name="q6" size="140" maxlength="140" id="q6" value="p3:"/><br /></p>
+<hr>
+<p><a href="https://assets.strategyzer.com/assets/vpd/resources/customer-gains-trigger-questions.pdf" class="bg-info text-white" target="_blank" >Customer Gains Questions</a></p>
+<p><strong>7. (50) Gains  1-<br />
+  </strong>
+ <input type="text" name="q7" size="140" maxlength="140" id="q7" value="g1:"/><br /></p>
+<p><strong>8. (50) Gains  2-<br />
+  </strong>
+ <input type="text" name="q8" size="140" maxlength="140" id="q8" value="g2:"/><br /></p>
+<p><strong>9. (50) Gains  3-<br />
+  </strong>
+ <input type="text" name="q9" size="140" maxlength="140" id="q9" value="g3:"/><br /></p>
+
+            </div>
+
+
+        <hr />
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+
+            <p>
+                Use a browser to complete this assignment.     
+                <br />
+                <br />
+            </p>
+            (50) 10. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        <br />
+            <br />
+            Note that you should verify that your assignment was submitted correctly by visiting this url:&nbsp; <a href="https://eprofessor.azurewebsites.net/code/Grading/StudentAssignmentInquiry.asp" class="bg-info text-white" target="_blank">https://eprofessor.azurewebsites.net/code/Grading/StudentAssignmentInquiry.asp</a>
+            <br />
+            Enter your last name and StarID, choose the correct semester, class and section; then click the &#39;List Submissions&#39; button.<br />
+            If your submission does not show up in the list (there are two lists- in date order, and in Assignment order) you did something wrong.<br />
+            Please use this as a learning opportunity and try again.
+        <hr />
+
+        </div>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.js"></script>
+
+</body>
+</html>
