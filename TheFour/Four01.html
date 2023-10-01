@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file for student firstname, lastname, starid on students' pages -->
+	<script src="../constants.js"></script>
+
+	<!-- course constant file that contains semester, class, section pages -->
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+
+    <title>MGMT353 Four01</title>
+</head>
+
+<body onload="setVariables()">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <h1 class=" text-center">The Future of Business</h1>
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="Four01" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            450 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <p>After completing this assignment you will be able to explain and make use of:</p>
+            <ul>
+                <li>Who are the Four?</li>
+                <li>How the Four are impacting business </li>
+            </ul>
+            <hr />
+
+        </div>
+
+        <div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+
+        <div id="Overview" class="collapse in  col-lg-12">
+
+<p> Ref: <br>
+    Read The Four: pages 1 to 156<br />
+</p>
+<hr />
+<hr />
+            </div>
+
+<div class="col-lg-12">
+
+<h2 class="text-center">Company Analysis</h2>
+<p>Comments on The Four by Bill Gallagher, taken from Amazon.com and edited.</p>
+    <p>Strengths of The Four. Scott Galloway clearly has a sharp business mind; he is street smart, likeable, down-to-earth, and often funny; he can hold an audience&#8217;s interest and knows the online landscape very well.<br />
+        He presents business concepts in a clear and well synthesized way, and doesn&#8217;t seem to be trying to sell us his own products or services.<br /><br />
+        Weaknesses:
+        Why not a five star rating then? While the book has some big thesis insights into the internet corporate behemoths and online commerce, it generally stays with the big part.<br />
+        This is valuable, and most readers will walk away with some fresh insights.<br />
+        However, once a big idea is noted, he tends to not delve deeper.<br />
+        There were even a few times when The Four feels like a blog rant, giving him an opportunity to vent at one of the big companies (most notably that Apple wouldn&#8217;t help the FBI crack the code of an iPhone to help them gather evidence on a San Bernardino shooter/terrorist). He also spends a bit of time telling us some obvious things, though in fairness to Galloway, it is tricky to know what to leave out as common knowledge when you are writing for a general audience. As someone who knows a fair bit about ecommerce, I may be showing my bias here, but confirming my sense of some obviousness is the notably lower rating (at this writing at least) that Amazon readers of business books give the book compared to general readers. I also wish Galloway would have delved deeper into the cultural and political implications for society when a handful of companies dominate the digital economy and have outsized influence in nearly every sphere. He touches upon this, but just touches. Perhaps that is too much to ask of a business book, but even the bigger picture business implications don&#8217;t get 
+        considered in a sustained way.<br />
+        Galloway's shortfall comes from his impatience.<br />
+        He says as much as he describes himself and his impatience comes across in some of the stories he tells about himself (most notably in his handling of his efforts to bludgeon the New York Times to change).<br />
+        Ultimately this impatience leads to the book's greatest weakness. <br />
+        Another example of The Four's superficiality/impatience: he casually refers to evolutionary &#8220;explanations&#8221; for business phenomenon.<br />
+        I am very much inclined toward evolutionary explanations for human behavior as well, but they come off as tossed out there instead of carefully thought through.<br />
+        Galloway&#8217;s breezy style also doesn&#8217;t help here. That is, Galloway enjoys being flip and cussing a fair bit.<br />
+        And a tossed out flip dismissal is often used as a substitute for well crafted writing.<br />
+        The Four has value, but it had potential be lots more.</p>
+<p>Read chapters 1 to 5 and answer the following questions.<br />
+</p>
+
+    <hr />
+    </div>
+
+        <!--Exercise 1-->
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Chapters 1 to 5</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+
+
+
+<p><br />
+  Chapter 1-Who are the Four?<br />
+    1. (50)  Briefly explain the main point that Scott Galloway is trying to make the reader aware of with this book.<br />
+ <input type="text" name="q1" size="120" maxlength="120" class="form-control" id="q1" value="customer segments:"/>
+</p>
+            <hr />
+
+<p>Chapter 2-Amazon and the future of retail<br />
+    2.(50) 
+    Examining the evolution of the retail era, what has Jeff Bezos done to take things to the next stage? <br />
+    
+ <input type="text" name="q2" size="120" maxlength="120" class="form-control" id="q2" value="next stage:"/>
+</p>
+<p>3. (50) How can a retailer possibly fight Amazon?<br />
+  
+ <input type="text" name="q3" size="120" maxlength="120" class="form-control" id="q3" value="compete with Amazon:"/>
+</p>
+            <hr />
+<p>Chapter 3 Apple and target markets<br />
+    4. (50) What does Apple do to command market share?<br />
+  
+ <input type="text" name="q4" size="120" maxlength="120" class="form-control" id="q4" value="Apple strategy:"/>
+
+    <hr />
+
+<p>Chapter 4 Facebook and appeal<br />
+    5. (50) In your opinion is Facbook a platform or a part of the news media?:<br />
+  
+ <input type="text" name="q5" size="120" maxlength="120" class="form-control" id="q5" value="fb platform or news:"/>
+</p>
+<p>6. (50) What is the impact of this distinction?<br />
+  
+ <input type="text" name="q6" size="120" maxlength="120" class="form-control" id="q6" value="distinction:"/>
+</p>
+            <hr />
+<p>Chapter 5 Google as a source of wisdom<br />
+    7. (50) Google has provided knowledge which has engendered trust.<br />
+        How is Google monetizing this trust?<br />
+  
+ <input type="text" name="q7" size="120" maxlength="120" class="form-control" id="q7" value="monetization:"/>
+</p>
+<p>8. (50) What could be a possible negative impact of harvesting someone's search history?<br />
+  
+ <input type="text" name="q8" size="120" maxlength="120" class="form-control" id="q8" value="search history:"/>
+</p>
+
+<hr />
+            </div>
+
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+
+            <p>
+                Use web editing software such as Dreamweaver or Visual Studio to complete and publish this assignment to your website.<br />
+            </p>
+            (50) 9. Assignment submission<br />
+            Use a web browser to view this completed page from your website.&nbsp;
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        <br />
+            <br />
+            Verify that your assignment was submitted correctly by clicking the &quot;Check Assignment Submissions&quot; button on your website home page.
+            <br />
+            <br />
+            If your submission does not show up in the list (there are two lists- in date order, and in Assignment order) you did something wrong.<br />
+            Please use this as a learning opportunity, correct any errors, and try again.
+        <hr />
+
+        </div>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+    </form>
+
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.js"></script>
+
+</body>
+</html>
+
