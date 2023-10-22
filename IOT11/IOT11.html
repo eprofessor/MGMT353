@@ -1,0 +1,524 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+	<title>IOT11</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- PgP 7/11/2019 summative assignment for Raspberry Pi, Arduino Uno, micro:bit -->
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file for student firstname, lastname, starid on students' pages -->
+	<script src="../constants.js"></script>
+
+	<!-- course constant file that contains semester, class, section pages -->
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+</head>
+
+<body onload="setVariables()">
+	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+		<input name="InstID" type="hidden" id="InstID" value="00617282">
+
+		<h1 class="text-center">Magic Mirror</h1>
+
+
+		<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="FirstName">First Name:</label>
+				<input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="LastName">Last Name:</label>
+				<input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="pin">StarID:</label>
+				<input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="email">Email:</label>
+				<input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+			</div>
+		</div>
+
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="semester">Semester:</label>
+				<input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="class">Class:</label>
+				<input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="section">Section:</label>
+				<input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="assignment">Assignment:</label>
+				<input class="form-control" name="assignment" id="assignment" value="IOT11" type="text" readonly="readonly">
+			</div>
+		</div>
+		<!-- -end-Student, class and assignment information-end -->
+		<br />
+
+		<!-- Calculate the correct path for saving the files -->
+		<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have completed this assignment- SUBMIT"><br />
+		</div>
+
+		<div class="h3 text-danger col-lg-12">
+			100 Points<hr />
+		</div>
+
+
+		<div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+		<div id="Objectives" class=" collapse in col-lg-12">
+
+
+			<p>
+				These instructions will show you how to install, configure and run a Magic Mirror on a Raspberry Pi.<br />
+				This software provides an easy way to create an information kiosk on a Raspberry Pi.<br />
+				<br />
+
+				More information on <a href="https://magicmirror.builders/" class="bg-info text-white" target="_blank">Magic Mirror</a> is available online.<br />
+
+			</p>
+			<p>After completing this assignment you will be able to:</p>
+			<ol>
+				<li>Start Magic Mirror on a Raspberry Pi</li>
+				<li>Modify the configuration of a Magic Mirror</li>
+			</ol>
+			<hr />
+		</div>
+
+
+
+		<div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+			<h3>When you encounter technical issues, please first review <a href="../IOT00/IOT00.html"  class="bg-info text-white" target="_blank" >IOT00</a>.    </h3>
+
+		<div id="Overview" class="collapse in  col-lg-12">
+			This assignment reviews basic computer concepts that you will need in this course and throughout your career.
+            <br />
+			<p>
+				You are expected to have a working knowledge of SBC hardware and software.<br />
+				If you do not understand how to use an item, perform a Google Search, 
+                refer to the <a href="https://learn.winona.edu/wiki/WSU_Technology_Knowledge_Base" class="bg-info text-white" target="_blank">WSU Technology Knowledge Base</a>,&nbsp; ask a teaching assistant, or ask the instructor.
+			</p>
+
+			<hr />
+		</div>
+
+		<!--Exercise 1-->
+
+		<div class="col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Install Magic Mirror</a><a href="#Exercise01"></a></div>
+
+		<div id="Exercise01" class="collapse in  col-lg-12">
+
+			<ol>
+				<li>These steps are performed on the Raspberry Pi</li>
+
+				<li>If the Magic Mirror software is not yet installed, please follow these steps.
+					<br />
+					<br />
+					<p>
+						<a href="images/UpdateAvailable.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/UpdateAvailable.JPG', 'popup'); return false;">
+							<img src="images/UpdateAvailable.JPG" width="300" alt="magic mirror" class="img-responsive img-responsive" /></a> Magic Mirror<br />
+					</p>
+				</li>
+
+				<li>The following installation instructions are based on the information from the <a href="https://docs.magicmirror.builders/getting-started/installation.html" class="bg-info text-white" target="_blank">MagicMirror website</a>.
+				</li>
+
+				<li>Install Node.js<br />
+					Open a terminal window and enter the following commands:<br />
+					<code>curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -</code>
+				</li>
+
+				<li>
+					<code>sudo apt install -y nodejs</code>
+				</li>
+
+				<li>clone the MagicMirror repository:<br />
+					<code>git clone https://github.com/MichMich/MagicMirror </code>
+				</li>
+
+				<li>move to the MagicMirror directory:<br />
+					<code>cd MagicMirror/</code>
+				</li>
+
+				<li>install the package manager<br />
+					<code>npm install </code>
+				</li>
+
+				<li>Note-read the output, you may need to run:
+					<br />
+					<code>npm audit fix</code>
+					<br />
+					or other commands to get the Magic Mirror to run.
+				</li>
+
+
+
+				<li>
+					<p>
+						<a href="images/MagicMirrorInstall01.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/MagicMirrorInstall01.PNG', 'popup'); return false;">
+							<img src="images/MagicMirrorInstall01.PNG" width="300" alt="magic mirror" class="img-responsive img-responsive" /></a> Magic Mirror<br />
+					</p>
+
+				</li>
+
+				<li>make a copy of the configuration file:<br />
+					<code>cp config/config.js.sample config/config.js</code>
+				</li>
+
+				<li>start the MagicMirror:<br />
+					<code>npm run start</code>
+				</li>
+
+				<li>If the webpage does not appear, troubleshoot and resolve any issues.<br />
+				</li>
+
+				<li>The default installation looks as below, with inappropriate alerts which can be changed:<br />
+					<p>
+						<a href="images/MagicMirrorLandscape.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/MagicMirrorLandscape.PNG', 'popup'); return false;">
+							<img src="images/MagicMirrorLandscape.PNG" width="300" alt="magic mirror" class="img-responsive img-responsive" /></a> Magic Mirror, default installation<br />
+					</p>
+
+				</li>
+
+				<li>With the MagicMirror running, press the Windows key to access the menu.<br />
+					You can shutdown the MagicMirror from the menu.<br />
+					Or you can edit the MagicMirror installation using Terminal window.
+				</li>
+
+                <li>
+                    If you encounter errors in the config file, or want to change the config file, refer to the screenshots below for assistance:<br />
+
+					<p>
+						<a href="images/config.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/config.JPG', 'popup'); return false;">
+							<img src="images/config.JPG" width="300" alt="magic mirror" class="img-responsive img-responsive" /></a> <br />
+                        Magic Mirror, config file<br />
+					</p>
+
+					<p>
+						<a href="images/error.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/error.JPG', 'popup'); return false;">
+							<img src="images/error.JPG" width="300" alt="magic mirror" class="img-responsive img-responsive" /></a> <br />
+                        Magic Mirror, error details<br />
+					</p>
+
+
+					<p>
+						<a href="images/geany.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/geany.JPG', 'popup'); return false;">
+							<img src="images/geany.JPG" width="300" alt="magic mirror" class="img-responsive img-responsive" /></a> Magic Mirror, Geany editor<br />
+					</p>
+
+
+                </li>
+
+			</ol>
+			<hr />
+		</div>
+
+
+
+		<!--Exercise 2-->
+
+		<div class="col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Configure Magic Mirror</a></div>
+
+		<div id="Exercise02" class="collapse in  col-lg-12">
+
+			<ol>
+				<li>These steps are performed on your computer using VNC to access the Raspberry Pi, or directly on the Raspberry Pi.</li>
+
+				<li>Open a Terminal window.	</li>
+
+				<li>Enter the following code:<br />
+					<code>cd ~</code>
+					<br />
+					<code>cd MagicMirror/config</code><br />
+
+				</li>
+
+				<li>Start the nano editor and modify the configuration file:<br />
+					<code>sudo nano config.js</code><br />
+					Note this is a large file, and you must use keyboard arrows, and NOT your mouse, to navigate.<br />
+					Scroll down to the Compliments section:<br />
+
+					<p>
+						<a href="images/configFile.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/configFile.PNG', 'popup'); return false;">
+							<img src="images/configFile.PNG" width="400" alt="compliments" class="img-responsive img-responsive" /></a>config file, Compliments section<br />
+					</p>
+				</li>
+
+				<li>Be very careful editing this file, incorrect punctuation will prevent the MagicMirror from working.<br />
+					<b>Add 4 compliments, one must contain your name.</b><br />
+					Note that each indentation is 4 spaces.<br />
+					Do NOT use the Tab key.<br />
+
+					<p>
+						<a href="images/sampleCompliments.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/sampleCompliments.PNG', 'popup'); return false;">
+							<img src="images/sampleCompliments.PNG" width="400" alt="compliments" class="img-responsive img-responsive" /></a>config file, Compliments section<br />
+					</p>
+
+					When done editing, open a Terminal window to the directory:<br />
+					<code>MagicMirror</code><br />
+					and enter:<br />
+					<code>npm run start</code><br />
+					This will restart the MagicMirror with the update compliments.<br />
+					Note-if you made an error you will need to review and correct the changes to the config.js file above.<br />
+                    Use 'Ctrl+Q' to stop the MagicMirror.
+
+				</li>
+
+			</ol>
+			<hr />
+		</div>
+
+
+
+
+		<!--Exercise 3-->
+
+
+		<div class="col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Screenshot</a></div>
+
+		<div id="Exercise03" class="collapse in  col-lg-12">
+
+
+			<ol>
+				<li>These steps are performed on your computer if you are using VNC, otherwise do them on the Raspberry Pi.</li>
+
+				<li>Display the MagicMirror with your compliments. </li>
+
+				<li>Make a screen shot of your MagicMirror displaying the compliment containing your name. </li>
+
+
+				<li>On your laptop save the screenshot  as &quot;IOT11&quot; in your ' 
+             <code><span id="abPath"></span></code>
+					<script>document.getElementById("abPath").innerHTML = Path; </script>
+					' folder.<br />
+
+			</ol>
+			<hr />
+		</div>
+
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screenshot IOT11</h2>
+			<hr />
+		</div>
+
+
+
+		<div class="col-lg-12"><a href="#UploadScreenShot" class="btn btn-info" data-toggle="collapse">Upload Screenshot</a></div>
+
+		<div id="UploadScreenShot" class="collapse in  col-lg-12">
+			<p>
+				Submit to the appropriate D2L Assignment folder a screenshot that documents your work.<br />
+			</p>
+			<br />
+		</div>
+
+		<div class="col-lg-12 text-primary">
+			<p>
+				(50) 1. Upload your screenshot to the &#39;IOT11&#39; D2L Assignment Folder.
+			</p>
+			<hr />
+		</div>
+
+
+
+
+		<!--Exercise 4-->
+
+		<div class="col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Reflections</a></div>
+
+		<div id="Exercise04" class="collapse in  col-lg-12">
+
+			<p>
+				Based on your experience in this exercise, consider the value of the MagicMirrors for organizations, especially departments involved in prototyping IoT products and services such as information kiosks.<br />
+				Think about what type of problems a Raspberry Pi equipped with the MagicMirror, sensors and actuators could solve, and whether it could be cost-effective.<br />
+				<br />
+				References:<br />
+				MagicMirror: <a href="https://magicmirror.builders/">Website</a><br />
+
+				MagicMirror Modules:  <a href="https://github.com/MichMich/MagicMirror/wiki/3rd-Party-Modules">3rd Party Modules</a><br />
+				MagicMirror Modules:    <a href="https://github.com/MichMich/MagicMirror/wiki/3rd-Party-Modules#utility--iot--3rd-party--integration">IoT modules</a>
+
+
+			</p>
+			<p>
+				&nbsp;
+			</p>
+
+			<div class="col-lg-12 text-primary">
+				(20) 2. Reflections-value<br />
+				List a specific problem that a MagicMirror could solve.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input class="form-control" name="q2" type="text" id="q2" value="specific problem:">
+				<hr />
+			</div>
+
+			<hr />
+
+
+			<div class="col-lg-12 text-primary">
+				(20) 3. Reflections-content<br />
+				Research the internet on the topic of the MagicMirror<br />
+				Why would an organization use the MagicMirror to develop product or service prototypes?<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input class="form-control" name="q3" type="text" id="q3" value="prototypes:">
+				<hr />
+			</div>
+			<hr />
+
+
+
+		</div>
+
+
+
+
+
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseSubmit" class="btn btn-info" data-toggle="collapse">Submit Assignment</a></div>
+
+
+		<div class="col-lg-12">
+			<p>
+				When all tasks are completed press the Submit button.
+			</p>
+			<hr />
+		</div>
+
+		<div class="col-lg-12 text-primary">
+			(10) 4. Assignment submission<br />
+			<!-- Enter your answer in the VALUE field below   GROK -->
+			<input class="form-control" name="q4" type="text" id="q4" value="I have completed all the exercises, and uploaded my screenshot to the D2L Assignment folder IOT11.">
+			<hr />
+		</div>
+
+
+
+
+
+		<hr />
+
+
+		<hr />
+
+		<div class="col-lg-12">
+			<p>
+				Congratulations! You have used the RPi to learn to use Magic Mirror, an extensible information kiosk, on a Raspberry Pi single board computer.
+			</p>
+			<p>
+				&nbsp;</p>
+			<hr />
+		</div>
+
+		<div class="col-lg-12 text-success">
+			<h2>Other things to try</h2>
+		</div>
+
+		<div class="col-lg-12 text-success">
+			<h3>Change Calendar Feed</h3>
+		</div>
+
+		<p><code>https://calendar.google.com/calendar/ical/nytimes.com_89ai4ijpb733gt28rg21d2c2ek%40group.calendar.google.com/public/basic.ics</code></p>
+
+					<p>
+						<a href="images/CalendarFeed.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/CalendarFeed.PNG', 'popup'); return false;">
+							<img src="images/CalendarFeed.PNG" width="400" alt="calendar feed" class="img-responsive img-responsive" /></a>config file, Calendar Feed<br />
+					</p>
+		<hr />
+
+		<div class="col-lg-12 text-success">
+			<h3>Add Weather Forecast</h3>
+			<hr />
+		</div>
+
+					<p><code>https://openweathermap.org/</code></p>
+
+					<p>
+						<a href="images/WeatherForecast.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/WeatherForecast.PNG', 'popup'); return false;">
+							<img src="images/WeatherForecast.PNG" width="400" alt="weather feed" class="img-responsive img-responsive" /></a>config file, Weather Forecast<br />
+					</p>
+
+
+					<p>
+						<a href="images/OWKey.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/OWKey.PNG', 'popup'); return false;">
+							<img src="images/OWKey.PNG" width="400" alt="weather feed" class="img-responsive img-responsive" /></a>config file, Open Weather Key<br />
+					</p>
+
+
+					<p>
+						<a href="images/OpenWeatherID.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/OpenWeatherID.PNG', 'popup'); return false;">
+							<img src="images/OpenWeatherID.PNG" width="400" alt="weather ID lookup" class="img-responsive img-responsive" /></a>config file, Open Weather Location ID lookup<br />
+					</p>
+
+		<hr />
+
+		<div class="col-lg-12 text-success">
+			<h3>Update MagicMirror</h3>
+			<hr />
+		</div>
+
+					<p>
+						<a href="images/Update2.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/Update2.PNG', 'popup'); return false;">
+							<img src="images/Update2.PNG" width="400" alt="update MagicMirror" class="img-responsive img-responsive" /></a>update available message<br />
+					</p>
+
+		<p>Typically entering the command below into your /MagicMirror/ folder will install updates:<br /> 
+			<code>
+				git pull && npm install --only=prod --omit=dev
+			</code>
+		</p>
+
+					<p>If that does not work, study the information at this url:<br />
+						<code>https://docs.magicmirror.builders/getting-started/upgrade-guide.html</code></p>
+
+
+
+
+
+		<div class=" col-lg-12">
+			<br />
+			<input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have completed this assignment- SUBMIT">
+			<br />
+		</div>
+
+	</form>
+
+	<!-- Creative Commons License Info -->
+	<div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+	<div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../../ReadOnly/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../ReadOnly/bootstrap.js"></script>
+
+
+</body>
+</html>
+
+
+
+
